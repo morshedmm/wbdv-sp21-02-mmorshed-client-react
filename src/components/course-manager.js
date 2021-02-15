@@ -14,7 +14,32 @@ class CourseManager extends React.Component {
 
     }
 
-    
+    addCourse = () => {
+        const newCourse = {
+          title: "New Course",
+          owner: "New Owner",
+          lastModified: "Never"
+        }
+        this.state.courses.push(newCourse)
+        this.setState(this.state)
+      }
+
+    deleteCourse = (courseToDelete) => {
+        const newCourses = this.state.courses
+          .filter(course => course !== courseToDelete)
+        this.setState({
+          courses: newCourses
+        })
+      }
+
+    render() {
+        <div>
+            <h1>CourseManager</h1>
+            <button onClick={this.addCourse}>Add Course</button>
+            <CourseTable deleteCourse={this.deleteCourse} courses={this.state.courses}/>
+        </div>
+
+    }
 
 }
 
