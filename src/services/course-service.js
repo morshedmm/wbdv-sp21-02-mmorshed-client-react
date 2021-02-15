@@ -1,4 +1,8 @@
 
+function CourseServiceClient() {
+
+    this.url = 'https://wbdv-generic-server.herokuapp.com/api/mmorshed/courses';
+    var self = this;
 
 function createCourse(course) {
 
@@ -22,3 +26,4 @@ function deleteCourse(id) {
 
 
 
+}
