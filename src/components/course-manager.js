@@ -1,5 +1,5 @@
 import React from 'react'
-import CourseTable from "course-table/course-table";
+import CourseTable from "./course-table/course-table";
 
 class CourseManager extends React.Component {
     state = {
@@ -33,12 +33,13 @@ class CourseManager extends React.Component {
       }
 
     render() {
+        return(
         <div>
             <h1>CourseManager</h1>
             <button onClick={this.addCourse}>Add Course</button>
             <CourseTable deleteCourse={this.deleteCourse} courses={this.state.courses}/>
         </div>
-
+        )
     }
 
 }
