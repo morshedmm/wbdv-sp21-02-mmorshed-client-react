@@ -1,5 +1,7 @@
 import React from 'react'
 import CourseTable from "./course-table/course-table";
+import CourseGrid from "./course-grid/course-grid";
+import CourseEditor from "./course-editor/course-editor";
 
 class CourseManager extends React.Component {
     state = {
@@ -38,6 +40,8 @@ class CourseManager extends React.Component {
             <h1>CourseManager</h1>
             <button onClick={this.addCourse}>Add Course</button>
             <CourseTable deleteCourse={this.deleteCourse} courses={this.state.courses}/>
+            <CourseGrid deleteCourse={this.deleteCourse} courses={this.state.courses}/>
+            <CourseEditor/>
         </div>
         )
     }
