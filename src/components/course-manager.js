@@ -38,9 +38,11 @@ class CourseManager extends React.Component {
     findAllCourses()
         .then(courses => this.setState({courses}))
 
-  addCourse = () => {
+  addCourse = (temp) => {
+    //var temp = "added course";
     const newCourse = {
-      title: "New Course",
+      //title: "New Course",
+      title: temp,
       owner: "New Owner",
       lastModified: "Never"
     }
@@ -97,7 +99,26 @@ class CourseManager extends React.Component {
             <i className="fas fa-2x fa-home float-right"></i>
           </Link>
         <h1>Course Manager</h1>
-        <button onClick={this.addCourse}>Add Course</button>
+        {/*<button onClick={this.addCourse}>Add Course</button>*/}
+        {/*<button onClick={this.addCourse.bind(this,"newCourse")}>Add Course</button>*/}
+        <div class="row">
+
+                <div class="col-1">
+                    <i class="fa fa-bars fa-2x pull-right"></i>
+                </div>
+
+                <div class="col-2 d-none d-sm-block">
+                    <h4>Course Manager</h4>
+                </div>
+
+                <div class="col-7">
+                    <input class="form-control bg-muted" placeholder="New Course Title"/>
+                </div>
+
+                <div class="col-2">
+                    <i onClick={this.addCourse.bind(this,"newCourse")} class="fa fa-plus fa-2x color-me-tomato"></i>
+                </div>
+              </div>
         <Route path="/courses/table">
           <CourseTable
               updateCourse={this.updateCourse}

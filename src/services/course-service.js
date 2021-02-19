@@ -1,5 +1,5 @@
 
-    const COURSES_URL =  'https://wbdv-generic-server.herokuapp.com/api/mmorshed/courses';
+    const COURSES_URL =  'https://wbdv-generic-server.herokuapp.com/api/mmorshed2/courses';
 
 export const findAllCourses = () =>
     fetch(COURSES_URL)

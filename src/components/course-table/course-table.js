@@ -16,7 +16,8 @@ export default class CourseTable
           <Link to="/courses/grid">
             <i className="fas fa-2x fa-th float-right"></i>
           </Link>
-        <h2>Course Table</h2>
+
+        {/*<h2>Course Table</h2>*/}
         <table className="table">
           <tbody>
           {/*<CourseRow title="CS1234" owner="alice" lastModified={"1/12/34"}/>*/}
