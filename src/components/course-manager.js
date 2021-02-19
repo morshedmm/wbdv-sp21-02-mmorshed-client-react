@@ -8,8 +8,8 @@ import courseService, {findAllCourses, deleteCourse} from "../services/course-se
 class CourseManager extends React.Component {
   state = {
     courses: [],
-    qwe: 123,
-    sdf: 456
+    //qwe: 123,
+    //sdf: 456
   }
 
   updateCourse = (course) => {
