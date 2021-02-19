@@ -6,11 +6,18 @@ import {Link, Route} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../services/course-service";
 
 class CourseManager extends React.Component {
-  state = {
+constructor(props) {
+    super(props);
+  this.state = {
     courses: [],
+    value: ''
     //qwe: 123,
     //sdf: 456
   }
+
+  this.handleChange = this.handleChange.bind(this);
+}
+
 
   updateCourse = (course) => {
     console.log(course)
@@ -92,6 +99,10 @@ class CourseManager extends React.Component {
         })
   }
 
+  handleChange(event) {
+      this.setState({value: event.target.value});
+    }
+
   render() {
     return(
       <div>
@@ -112,11 +123,12 @@ class CourseManager extends React.Component {
                 </div>
 
                 <div class="col-7">
-                    <input class="form-control bg-muted" placeholder="New Course Title"/>
+                    <input class="form-control bg-muted" type="text" value={this.state.value} onChange={this.handleChange} placeholder="New Course Title"/>
                 </div>
 
                 <div class="col-2">
-                    <i onClick={this.addCourse.bind(this,"newCourse")} class="fa fa-plus fa-2x color-me-tomato"></i>
+
+                    <i onClick={this.addCourse.bind(this,this.state.value)} class="fa fa-plus fa-2x color-me-tomato"></i>
                 </div>
               </div>
         <Route path="/courses/table">
