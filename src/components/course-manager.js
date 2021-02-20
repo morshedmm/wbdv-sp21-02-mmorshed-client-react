@@ -4,6 +4,7 @@ import CourseGrid from "./course-grid/course-grid";
 import CourseEditor from "./course-editor/course-editor";
 import {Link, Route} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../services/course-service";
+import CourseHeader from "./course-header";
 
 class CourseManager extends React.Component {
 constructor(props) {
@@ -11,8 +12,7 @@ constructor(props) {
   this.state = {
     courses: [],
     value: ''
-    //qwe: 123,
-    //sdf: 456
+   
   }
 
   this.handleChange = this.handleChange.bind(this);
@@ -114,6 +114,8 @@ constructor(props) {
 
         {/*<button onClick={this.addCourse}>Add Course</button>*/}
         {/*<button onClick={this.addCourse.bind(this,"newCourse")}>Add Course</button>*/}
+
+      <Route path="/courses/table">
       <div class="row">
 
                 <div class="col-1">
@@ -138,6 +140,43 @@ constructor(props) {
 
 
         </div>
+        </Route>
+
+        <Route path="/courses/grid">
+              <div class="row">
+
+                        <div class="col-1">
+                            <i className="fa fa-bars fa-2x pull-right"></i>
+                        </div>
+
+                        <div class="col-3 d-none d-sm-block">
+                            <h4>Course Manager</h4>
+                        </div>
+
+                        <div class="col-7">
+                            <input class="form-control bg-muted" type="text" value={this.state.value}
+                            onChange={this.handleChange} placeholder="New Course Title"/>
+                        </div>
+
+                        <div class="col-1">
+
+                            <i onClick={this.addCourse.bind(this,this.state.value)}
+                            className="fa fa-plus fa-2x color-me-tomato"></i>
+
+                        </div>
+
+
+              </div>
+        </Route>
+
+
+
+        {/*
+        <Route path="/courses/table">
+          <CourseHeader/>
+        </Route>
+        */}
+
         <Route path="/courses/table">
           <CourseTable
               updateCourse={this.updateCourse}
