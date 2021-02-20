@@ -131,21 +131,37 @@ constructor(props) {
 
                 <div class="col-1">
 
-                    <i onClick={this.addCourse.bind(this,this.state.value)} className="fa fa-plus fa-2x color-me-tomato"></i>
+                    <i onClick={this.addCourse.bind(this,this.state.value)}
+                    className="fa fa-plus fa-2x color-me-tomato"></i>
 
                 </div>
+
+
         </div>
         <Route path="/courses/table">
           <CourseTable
               updateCourse={this.updateCourse}
               deleteCourse={this.deleteCourse}
               courses={this.state.courses}/>
+              <div className="fixed-bottom">
+              <i onClick={this.addCourse.bind(this,this.state.value)}
+               className="fa fa-plus fa-2x color-me-tomato float-right"></i>
+               </div>
         </Route>
         <Route path="/courses/grid">
           <CourseGrid
               deleteCourse={this.deleteCourse}
               courses={this.state.courses}/>
+              <div className="fixed-bottom">
+              <i onClick={this.addCourse.bind(this,this.state.value)}
+              className="fa fa-plus fa-2x color-me-tomato float-right"></i>
+              </div>
         </Route>
+        <div>
+
+
+
+         </div>
           {/*<Route path="/courses/editor">*/}
           {/*    <CourseEditor/>*/}
           {/*</Route>*/}

@@ -56,6 +56,7 @@ export default class CourseTable
           }
           </tbody>
         </table>
+
       </div>
     )
   }
