@@ -26,9 +26,13 @@ export default class CourseTable
                 <th>Owned By</th>
                 <th>Lat Modified</th>
                 <th>
+                    <span class="float-right">
+                    <i className="fas fa-2x fa-folder"></i>
+                    <i className="fas fa-2x fa-sort"></i>
                     <Link to="/courses/grid">
-                                <i className="fas fa-2x fa-th float-right"></i>
-                              </Link>
+                        <i className="fas fa-2x fa-th"></i>
+                    </Link>
+                    </span>
                 </th>
 
             </tr>
