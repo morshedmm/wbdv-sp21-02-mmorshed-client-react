@@ -6,11 +6,11 @@ const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
   <div>
      <div className="row pt-3">
 
-     <div className="col-4">
+     <div className="col-4 d-sm-none d-md-block">
         <h4>Recent Documents</h4>
      </div>
 
-     <div className="col-4">
+     <div className="col-4 d-sm-none d-md-block">
         <div className="row">
         <h4>Owned By me</h4>
         <i class="fa fa-sort-down"></i>
