@@ -4,7 +4,7 @@ import './course-editor.style.client.css';
 
 const CourseEditor = ({history}) =>
   <div className="row">
-    <div className="col-3">
+    <div className="col-1">
     <i onClick={() => history.goBack()}
                className="fas fa-2x fa-times float-left"></i>
     </div>
