@@ -42,9 +42,11 @@ const CourseRow = (
         <td>{owner}</td>
         <td>{lastModified}</td>
         <td>
+            <span class="float-right">
             <i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>
             {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit"></i>}
             {editing && <i onClick={() => saveTitle()} className="fas fa-check"></i>}
+            </span>
         </td>
       </tr>
   )

@@ -24,11 +24,11 @@ export default class CourseTable
             <tr>
                 <th>Title</th>
                 <th>Owned By</th>
-                <th>Lat Modified</th>
+                <th>Last Modified</th>
                 <th>
                     <span class="float-right">
-                    <i className="fas fa-2x fa-folder"></i>
-                    <i className="fas fa-2x fa-sort"></i>
+                    <i className="fas fa-2x fa-folder add-padding-right"></i>
+                    <i className="fas fa-2x fa-sort add-padding-right"></i>
                     <Link to="/courses/grid">
                         <i className="fas fa-2x fa-th"></i>
                     </Link>
