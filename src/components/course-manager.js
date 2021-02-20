@@ -12,7 +12,7 @@ constructor(props) {
   this.state = {
     courses: [],
     value: ''
-   
+
   }
 
   this.handleChange = this.handleChange.bind(this);

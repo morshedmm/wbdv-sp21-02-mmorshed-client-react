@@ -82,34 +82,34 @@ const CourseEditor = ({history}) =>
                 <ul class="list-group">
                     <li class="list-group-item active">
                         Module 1-JQuery
-                        <i class="fa fa-trash pull-right"></i>
+                        <i class="fa fa-trash float-right"></i>
                     </li>
                     <li class="list-group-item bg-secondary heading-color">
                         Module 2-React
-                        <i class="fa fa-trash pull-right"></i>
+                        <i class="fa fa-trash float-right"></i>
                     </li>
                     <li class="list-group-item bg-secondary heading-color">
                         Module 3-Redux
-                        <i class="fa fa-trash pull-right"></i>
+                        <i class="fa fa-trash float-right"></i>
                     </li>
                     <li class="list-group-item bg-secondary heading-color">
                         Module 4-Native
-                        <i class="fa fa-trash pull-right"></i>
+                        <i class="fa fa-trash float-right"></i>
                     </li>
                     <li class="list-group-item bg-secondary heading-color">
                         Module 5-Angular
-                        <i class="fa fa-trash pull-right"></i>
+                        <i class="fa fa-trash float-right"></i>
                     </li>
                     <li class="list-group-item bg-secondary heading-color">
                         Module 6-Node
-                        <i class="fa fa-trash pull-right"></i>
+                        <i class="fa fa-trash float-right"></i>
                     </li>
                     <li class="list-group-item bg-secondary heading-color">
                         Module 7-Mongo
-                        <i class="fa fa-trash pull-right"></i>
+                        <i class="fa fa-trash float-right"></i>
                     </li>
                     <li class="list-group-item bg-dark">
-                        <i class="fa fa-plus pull-right heading-color"></i>
+                        <i class="fa fa-plus float-right heading-color"></i>
                     </li>
                 </ul>
             </div>
