@@ -2,7 +2,7 @@ import React from 'react'
 import CourseCard from "./course-card";
 import {Link} from "react-router-dom";
 
-const CourseGrid = ({courses}) =>
+const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
   <div>
      <div className="row pt-3">
 
@@ -28,7 +28,10 @@ const CourseGrid = ({courses}) =>
     <div className="row">
     {
       courses.map(course =>
-        <CourseCard course={course}/>
+        <CourseCard course={course}
+        deleteCourse={deleteCourse}
+        updateCourse={updateCourse}
+        title={course.title}/>
       )
     }
     </div>
