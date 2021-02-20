@@ -105,32 +105,36 @@ constructor(props) {
 
   render() {
     return(
-      <div>
+      <div className="container pt-3">
+          <div class="">
           <Link to="/">
-            <i className="fas fa-2x fa-home float-right"></i>
+            <i className="fas fa-2x fa-home pull-right"></i>
           </Link>
-        <h1>Course Manager</h1>
+          </div>
+
         {/*<button onClick={this.addCourse}>Add Course</button>*/}
         {/*<button onClick={this.addCourse.bind(this,"newCourse")}>Add Course</button>*/}
-        <div class="row">
+      <div class="row">
 
                 <div class="col-1">
-                    <i class="fa fa-bars fa-2x pull-right"></i>
+                    <i className="fa fa-bars fa-2x pull-right"></i>
                 </div>
 
-                <div class="col-2 d-none d-sm-block">
+                <div class="col-3 d-none d-sm-block">
                     <h4>Course Manager</h4>
                 </div>
 
                 <div class="col-7">
-                    <input class="form-control bg-muted" type="text" value={this.state.value} onChange={this.handleChange} placeholder="New Course Title"/>
+                    <input class="form-control bg-muted" type="text" value={this.state.value}
+                    onChange={this.handleChange} placeholder="New Course Title"/>
                 </div>
 
-                <div class="col-2">
+                <div class="col-1">
 
-                    <i onClick={this.addCourse.bind(this,this.state.value)} class="fa fa-plus fa-2x color-me-tomato"></i>
+                    <i onClick={this.addCourse.bind(this,this.state.value)} className="fa fa-plus fa-2x color-me-tomato"></i>
+
                 </div>
-              </div>
+        </div>
         <Route path="/courses/table">
           <CourseTable
               updateCourse={this.updateCourse}

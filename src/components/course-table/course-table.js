@@ -13,12 +13,26 @@ export default class CourseTable
   render() {
     return(
       <div>
-          <Link to="/courses/grid">
+
+          {/*<Link to="/courses/grid">
             <i className="fas fa-2x fa-th float-right"></i>
-          </Link>
+          </Link> */}
 
         {/*<h2>Course Table</h2>*/}
         <table className="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Owned By</th>
+                <th>Lat Modified</th>
+                <th>
+                    <Link to="/courses/grid">
+                                <i className="fas fa-2x fa-th float-right"></i>
+                              </Link>
+                </th>
+
+            </tr>
+        </thead>
           <tbody>
           {/*<CourseRow title="CS1234" owner="alice" lastModified={"1/12/34"}/>*/}
           {/*<CourseRow title="CS2345" owner="bob"   lastModified={"2/23/24"}/>*/}
