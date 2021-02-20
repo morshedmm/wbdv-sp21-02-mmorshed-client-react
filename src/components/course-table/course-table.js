@@ -26,7 +26,7 @@ export default class CourseTable
                 <th>Owned By</th>
                 <th>Last Modified</th>
                 <th>
-                    <span class="float-right">
+                    <span className="float-right">
                     <i className="fas fa-2x fa-folder add-padding-right"></i>
                     <i className="fas fa-2x fa-sort add-padding-right"></i>
                     <Link to="/courses/grid">
