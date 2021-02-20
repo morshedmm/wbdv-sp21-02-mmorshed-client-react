@@ -50,8 +50,8 @@ constructor(props) {
     const newCourse = {
       //title: "New Course",
       title: temp,
-      owner: "New Owner",
-      lastModified: "Never"
+      owner: "me",
+      lastModified: new Date().getMonth() + "/" + new Date().getDate() + "/" + new Date().getFullYear()
     }
     courseService.createCourse(newCourse)
         .then(course => this.setState(
@@ -108,7 +108,7 @@ constructor(props) {
       <div className="container pt-3">
           <div class="">
           <Link to="/">
-            <i className="fas fa-2x fa-home pull-right"></i>
+            <i className="fas fa-2x fa-home float-right"></i>
           </Link>
           </div>
 
