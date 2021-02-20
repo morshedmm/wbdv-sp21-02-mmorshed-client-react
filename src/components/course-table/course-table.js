@@ -12,7 +12,7 @@ export default class CourseTable
 
   render() {
     return(
-      <div>
+      <div class="pt-3">
 
           {/*<Link to="/courses/grid">
             <i className="fas fa-2x fa-th float-right"></i>
