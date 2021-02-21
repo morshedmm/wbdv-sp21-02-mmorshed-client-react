@@ -12,9 +12,6 @@ const CourseEditor = ({history}) =>
     <h2>
 
         Course Editor
-
-        {/*<i onClick={() => props.history.goBack()}*/}
-        {/*   className="fas fa-times float-right"></i>*/}
     </h2>
     </div>
 
