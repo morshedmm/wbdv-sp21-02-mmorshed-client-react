@@ -55,9 +55,9 @@ const CourseCard = ({course, deleteCourse, updateCourse, title}) => {
         }
 
         <span className="float-right">
-        {editing && <i onClick={() => deleteTitle()} className="fas fa-2x fa-trash"></i>}
+        {editing && <i onClick={() => deleteTitle()} className="fas fa-2x fa-trash my-controls-at-top-right"></i>}
         {!editing && <i onClick={() => setEditing(true)} className="fas fa-2x fa-edit"></i>}
-        {editing && <i onClick={() => saveTitle()} className="fas fa-2x fa-check"></i>}
+        {editing && <i onClick={() => saveTitle()} className="fas fa-2x fa-check my-controls-at-top-right2"></i>}
         </span>
       </div>
     </div>
