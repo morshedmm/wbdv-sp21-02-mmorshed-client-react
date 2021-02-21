@@ -33,7 +33,7 @@ export default class CourseTable
             </tr>
         </thead>
           <tbody>
-          
+
           {
             this.props.courses.map((course, ndx) =>
               <CourseRow

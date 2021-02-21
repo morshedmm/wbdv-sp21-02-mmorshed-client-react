@@ -27,7 +27,7 @@ const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
       </span>
       </div>
       </div>
-    {/*<h2>Recent Documents {courses.length}</h2>*/}
+    
     <div className="row">
     {
       courses.map(course =>
