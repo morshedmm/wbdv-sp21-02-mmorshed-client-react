@@ -46,15 +46,14 @@ const CourseCard = ({course, deleteCourse, updateCourse, title}) => {
         }
 
         <p className="card-text">Some description</p>
-        {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
+
         <img src={``}/>
         {
         <Link to="/courses/editor" className="btn btn-primary">
                     {course.title}
         </Link>
         }
-        {/*<i className="fas fa-trash"></i>*/}
-        {/*<i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>*/}
+
         <span className="float-right">
         {editing && <i onClick={() => deleteTitle()} className="fas fa-2x fa-trash"></i>}
         {!editing && <i onClick={() => setEditing(true)} className="fas fa-2x fa-edit"></i>}
