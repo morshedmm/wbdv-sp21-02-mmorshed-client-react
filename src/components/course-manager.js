@@ -172,7 +172,7 @@ constructor(props) {
 
 
          </div>
-          
+
           <Route path="/courses/editor"
                  render={(props) => <CourseEditor {...props}/>}>
           </Route>
