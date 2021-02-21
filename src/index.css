@@ -44,3 +44,12 @@ code {
     right: 45px;
 
 }
+
+
+.my-controls-right {
+
+    position: absolute;
+
+    right: 10px;
+
+}
