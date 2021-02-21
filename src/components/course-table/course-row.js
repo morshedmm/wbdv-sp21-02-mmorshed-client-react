@@ -34,6 +34,7 @@ const CourseRow = (
             {
                 !editing &&
                 <Link to="/courses/editor">
+                    <i class="fa fa-file add-padding-right-5px"></i>
                     {title}
                 </Link>
             }
@@ -49,9 +50,10 @@ const CourseRow = (
         <td className="d-none d-sm-none d-md-none d-lg-table-cell">{lastModified}</td>
         <td>
             <span class="float-right">
+            {editing && <i onClick={() => saveTitle()} className="fas fa-check"></i>}
             {editing && <i onClick={() => deleteTitle()} className="fas fa-trash"></i>}
             {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit"></i>}
-            {editing && <i onClick={() => saveTitle()} className="fas fa-check"></i>}
+
             </span>
         </td>
       </tr>
