@@ -46,7 +46,7 @@ const CourseRow = (
             }
         </td>
         <td>{owner}</td>
-        <td>{lastModified}</td>
+        <td className="d-none d-sm-table-cell">{lastModified}</td>
         <td>
             <span class="float-right">
             {editing && <i onClick={() => deleteTitle()} className="fas fa-trash"></i>}
