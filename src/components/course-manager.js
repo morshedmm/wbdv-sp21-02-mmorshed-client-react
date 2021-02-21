@@ -53,6 +53,8 @@ constructor(props) {
       owner: "me",
       lastModified: new Date().getMonth() + "/" + new Date().getDate() + "/" + new Date().getFullYear()
     }
+
+
     courseService.createCourse(newCourse)
         .then(course => this.setState(
             (prevState) => ({
@@ -62,6 +64,8 @@ constructor(props) {
                   course
               ]
             })))
+
+            this.setState({value: ""});
 
     // this.state.courses.push(newCourse)
     // this.setState(this.state)
