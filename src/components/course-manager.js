@@ -27,28 +27,19 @@ constructor(props) {
           courses: prevState.courses.map(
               (c) => c._id === course._id ? course : c)
 
-          // courses: prevState.courses.map(c => {
-          //   if(c._id === course._id) {
-          //     return course
-          //   } else {
-          //     return c
-          //   }
-          // })
+
         })))
   }
 
   componentDidMount = () =>
-    // findAllCourses()
-    //     .then(actualCourses => this.setState({
-    //       courses: actualCourses
-    //     }))
+
     findAllCourses()
         .then(courses => this.setState({courses}))
 
   addCourse = (temp) => {
-    //var temp = "added course";
+
     const newCourse = {
-      //title: "New Course",
+
       title: temp,
       owner: "me",
       lastModified: new Date().getMonth() + "/" + new Date().getDate() + "/" + new Date().getFullYear()
@@ -67,33 +58,13 @@ constructor(props) {
 
             this.setState({value: ""});
 
-    // this.state.courses.push(newCourse)
-    // this.setState(this.state)
+
   }
 
   deleteCourse = (courseToDelete) => {
     courseService.deleteCourse(courseToDelete._id)
         .then(status => {
-          // const newCourses = this.state.courses
-          //     .filter(course => course !== courseToDelete)
-          // this.setState({
-          //   courses: newCourses
-          // })
-          // this.setState((prevState) => {
-          //   // let nextState = {...prevState}
-          //   // nextState.courses =
-          //   //     prevState
-          //   //         .courses
-          //   //         .filter(course => course !== courseToDelete)
-          //
-          //   let nextState = {
-          //     ...prevState,
-          //     courses: prevState.courses.filter
-          //               (course => course !== courseToDelete)
-          //   }
-          //
-          //   return nextState
-          // })
+
 
           this.setState((prevState) => ({
               ...prevState,
@@ -116,8 +87,7 @@ constructor(props) {
           </Link>
           </div>
 
-        {/*<button onClick={this.addCourse}>Add Course</button>*/}
-        {/*<button onClick={this.addCourse.bind(this,"newCourse")}>Add Course</button>*/}
+
 
       <Route path="/courses/table">
       <div class="row">
@@ -175,11 +145,7 @@ constructor(props) {
 
 
 
-        {/*
-        <Route path="/courses/table">
-          <CourseHeader/>
-        </Route>
-        */}
+
 
         <Route path="/courses/table">
           <CourseTable
@@ -206,12 +172,7 @@ constructor(props) {
 
 
          </div>
-          {/*<Route path="/courses/editor">*/}
-          {/*    <CourseEditor/>*/}
-          {/*</Route>*/}
-          {/*<Route path="/courses/editor"*/}
-          {/*       render={(props) => <CourseEditor props={props}/>}>*/}
-          {/*</Route>*/}
+          
           <Route path="/courses/editor"
                  render={(props) => <CourseEditor {...props}/>}>
           </Route>
