@@ -23,8 +23,8 @@ export default class CourseTable
         <thead>
             <tr>
                 <th>Title</th>
-                <th>Owned By</th>
-                <th className="d-none d-sm-table-cell">Last Modified</th>
+                <th className="d-none d-sm-table-cell">Owned By</th>
+                <th className="d-none d-sm-table-cell d-md-table-cell">Last Modified</th>
                 <th>
                     <span className="float-right">
                     <i className="fas fa-2x fa-folder add-padding-right"></i>

@@ -45,8 +45,8 @@ const CourseRow = (
                     className="form-control"/>
             }
         </td>
-        <td>{owner}</td>
-        <td className="d-none d-sm-table-cell">{lastModified}</td>
+        <td className="d-none d-sm-table-cell">{owner}</td>
+        <td className="d-none d-sm-table-cell d-md-table-cell">{lastModified}</td>
         <td>
             <span class="float-right">
             {editing && <i onClick={() => deleteTitle()} className="fas fa-trash"></i>}
