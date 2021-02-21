@@ -122,7 +122,7 @@ constructor(props) {
                     <i className="fa fa-bars fa-2x pull-right"></i>
                 </div>
 
-                <div class="col-3 d-sm-none d-xs-none d-md-none d-lg-block">
+                <div class="col-3 d-none d-sm-none d-md-none d-lg-block">
                     <h4>Course Manager</h4>
                 </div>
 
