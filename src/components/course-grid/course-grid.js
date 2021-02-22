@@ -17,10 +17,10 @@ const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
         </div>
      </div>
 
-      <div className="col-xs-12 col-4">
+      <div className="col-4">
       <span className="float-right">
-      <i className="fas fa-2x fa-folder add-padding-right"></i>
-      <i className="fas fa-2x fa-sort add-padding-right"></i>
+      <i className="fas fa-2x fa-folder add-padding-right-5px"></i>
+      <i className="fas fa-2x fa-sort add-padding-right-5px"></i>
       <Link to="/courses/table">
         <i className="fas fa-list fa-2x"></i>
       </Link>
