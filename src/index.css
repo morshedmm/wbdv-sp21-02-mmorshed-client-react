@@ -53,3 +53,7 @@ code {
     right: 10px;
 
 }
+
+.my-no-wrap {
+    white-space: nowrap
+}
