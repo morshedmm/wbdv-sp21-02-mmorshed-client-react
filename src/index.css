@@ -57,3 +57,7 @@ code {
 .my-no-wrap {
     white-space: nowrap
 }
+
+.add-padding-top {
+    padding-top: 10px;
+}
