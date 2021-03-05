@@ -21,13 +21,15 @@ const CourseEditor = ({history}) => {
     return (
     <Provider store={store}>
         <div>
+
             <h2>
-                <Link to="/courses/table">
+                {/*<Link to="/courses/table">
                     <i className="fas fa-arrow-left"></i>
-                </Link>
-                Course Editor {courseId} {moduleId}
+                </Link>*/}
+                 {/*{courseId} {moduleId}*/}
                 <i onClick={() => history.goBack()}
-                   className="fas fa-times float-right"></i>
+                   className="fas fa-times float-left"></i>
+                <span className="add-padding-left">Web Dev Selected Course</span>
                 {/*<i onClick={() => props.history.goBack()}*/}
                 {/*   className="fas fa-times float-right"></i>*/}
             </h2>

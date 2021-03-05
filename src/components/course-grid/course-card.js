@@ -49,7 +49,7 @@ const CourseCard = ({course, deleteCourse, updateCourse, title}) => {
 
         <img src={``}/>
         {
-        <Link to="/courses/editor" className="btn btn-primary">
+        <Link to={`/courses/editor/${course._id}`} className="btn btn-primary">
                     {course.title}
         </Link>
         }

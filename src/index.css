@@ -21,6 +21,10 @@ code {
     padding-right: 10px;
 }
 
+.add-padding-left {
+    padding-left: 20px;
+}
+
 .add-padding-right-5px {
     padding-right: 5px;
 }

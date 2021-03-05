@@ -15,12 +15,18 @@ const EditableItem = (
         <>
             {
                 !editing &&
-                <>
+                <div className="row">
+                    <div className="col-9">
                     <Link className={`nav-link ${active?'active':''}`} to={to}>
                         {item.title} {JSON.stringify(active)}
                     </Link>
+                    </div>
+                    <div className="">
+                    <span className="float-right">
                     <i onClick={() => setEditing(true)} className="fas fa-edit"></i>
-                </>
+                    </span>
+                    </div>
+                </div>
             }
             {
                 editing &&
