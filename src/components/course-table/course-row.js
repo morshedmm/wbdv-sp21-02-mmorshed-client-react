@@ -33,7 +33,8 @@ const CourseRow = (
         <td>
             {
                 !editing &&
-                <Link to="/courses/editor">
+
+                <Link to={`/courses/editor/${course._id}`}>
                     <i class="fa fa-file add-padding-right-5px"></i>
                     {title}
                 </Link>
