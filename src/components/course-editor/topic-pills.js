@@ -22,7 +22,7 @@ const TopicPills = (
         if(lessonId !== "undefined" && typeof lessonId !== "undefined") {
             findTopicsForLesson(lessonId)
         }
-    }, [lessonId])
+    }, [moduleId, lessonId])
     return(
     <div>
         {/*<h2>Lessons</h2>*/}

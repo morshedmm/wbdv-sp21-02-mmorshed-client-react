@@ -48,8 +48,8 @@ const EditableItem = (
                     }} className="fas fa-check"></i>
                     <i onClick={() => {
                         setEditing(false)
-                        deleteItem(item)
-                    }} className="fas fa-times"></i>
+                        deleteItem(cachedItem)
+                    }} className="fas fa-times add-padding-left"></i>
                     </span>
                     </div>
                 </div>

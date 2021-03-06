@@ -42,10 +42,9 @@ const CourseEditor = ({history}) => {
                 </div>
                 <div className="col-8">
                     <LessonTabs/>
+                     {/*<TopicPills/>*/}
                 </div>
-                <div className="">
-                    <TopicPills/>
-                </div>
+
             </div>
         </div>
     </Provider>)}

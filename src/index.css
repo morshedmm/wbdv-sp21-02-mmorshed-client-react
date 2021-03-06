@@ -37,6 +37,14 @@ code {
     padding-left: 140px;
 }
 
+.add-padding-left-30 {
+    padding-left: 30px;
+}
+
+.add-padding-right-30 {
+    padding-right: 30px;
+}
+
 .add-padding-right-5px {
     padding-right: 5px;
 }
