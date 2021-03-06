@@ -6,11 +6,7 @@ import topicService from '../../services/topic-service'
 
 const TopicPills = (
     {
-        topics=[
-            {_id: "123", title: "Lesson A"},
-            {_id: "123", title: "Lesson B"},
-            {_id: "123", title: "Lesson C"}
-        ],
+        topics=[],
         findTopicsForLesson,
         createTopicForLesson,
         deleteTopic,
@@ -19,9 +15,9 @@ const TopicPills = (
     const {courseId, moduleId, lessonId, topicId} = useParams();
     useEffect(() => {
         console.log("LOAD TOPICS FOR LESSON: " + lessonId)
-        if(lessonId !== "undefined" && typeof lessonId !== "undefined") {
+        //if(lessonId !== "undefined" && typeof lessonId !== "undefined") {
             findTopicsForLesson(lessonId)
-        }
+        //}
     }, [moduleId, lessonId])
     return(
     <div>
@@ -52,16 +48,16 @@ const stpm = (state) => ({
 })
 const dtpm = (dispatch) => ({
     findTopicsForLesson: (lessonId) => {
-        console.log("LOAD TOPICS FOR LESSON:")
-        console.log(lessonId)
+        //console.log("LOAD TOPICS FOR LESSON:")
+        //console.log(lessonId)
         topicService.findTopicsForLesson(lessonId)
             .then(topics => dispatch({
-                type: "FIND_LESSONS",
+                type: "FIND_TOPICS",
                 topics
             }))
     },
     createTopicForLesson: (lessonId) => {
-        console.log("CREATE TOPIC FOR LESSON: " + lessonId)
+        //console.log("CREATE TOPIC FOR LESSON: " + lessonId)
         topicService
             .createTopicForLesson(lessonId, {title: "New Topic"})
             .then(topic => dispatch({
