@@ -71,11 +71,11 @@ const dtpm = (dispatch) => ({
                    type: "UPDATE_TOPIC",
                    topic
             })),
-    deleteTopic: (item) => {
-        topicService.deleteTopic(item._id)
+    deleteTopic: (topic) => {
+        topicService.deleteTopic(topic._id)
         .then(status => dispatch({
             type: "DELETE_TOPIC",
-            topicToDelete:item
+            topicToDelete:topic
         }))
     }
 
