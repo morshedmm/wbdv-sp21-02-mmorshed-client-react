@@ -15,9 +15,9 @@ const LessonTabs = (
     const {courseId, moduleId, lessonId} = useParams();
     useEffect(() => {
         console.log("LOAD LESSONS FOR MODULE: " + moduleId)
-        //if(moduleId !== "undefined" && typeof moduleId !== "undefined") {
+        if(moduleId !== "undefined" && typeof moduleId !== "undefined") {
             findLessonsForModule(moduleId)
-        //}
+        }
     }, [moduleId])
     return(
     <div>
