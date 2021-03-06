@@ -1,4 +1,5 @@
 const MODULES_URL = "https://wbdv-generic-server.herokuapp.com/api/mmorshed2/modules";
+const LESSONS_URL = "https://wbdv-generic-server.herokuapp.com/api/mmorshed2/lessons";
 
 export const createLessonForModule = (moduleId, lesson) =>
     fetch(`${MODULES_URL}/${moduleId}/lessons`, {
@@ -14,6 +15,14 @@ export const findLessonsForModule = (moduleId) =>
     fetch(`${MODULES_URL}/${moduleId}/lessons`)
         .then(response => response.json())
 
+
+export const deleteLesson = (lessonId) =>
+    fetch(`${LESSONS_URL}/${lessonId}`, {
+        method: "DELETE"
+    })
+        .then(response => response.json())
+
+
 export default {
-    findLessonsForModule, createLessonForModule
+    findLessonsForModule, createLessonForModule, deleteLesson
 }

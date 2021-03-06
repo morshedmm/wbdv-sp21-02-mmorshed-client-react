@@ -12,7 +12,8 @@ const LessonTabs = (
             {_id: "123", title: "Lesson C"}
         ],
         findLessonsForModule,
-        createLessonForModule
+        createLessonForModule,
+        deleteLesson
     }) => {
     const {courseId, moduleId, lessonId} = useParams();
     useEffect(() => {
@@ -27,16 +28,19 @@ const LessonTabs = (
         <ul className="nav nav-pills">
             {
                 lessons.map(lesson =>
-                    <li className="nav-item">
+                    <li className="nav-item add-padding-right-25">
                         <EditableItem
                             active={lesson._id === lessonId}
                             to={`/courses/editor/${courseId}/${moduleId}/${lesson._id}`}
+                            deleteItem={deleteLesson}
                             item={lesson}/>
                     </li>
                 )
             }
             <li>
+                <span className="float-right">
                 <i onClick={() => createLessonForModule(moduleId)} className="fas fa-plus"></i>
+                </span>
             </li>
         </ul>
     </div>)}
@@ -62,6 +66,13 @@ const dtpm = (dispatch) => ({
                 type: "CREATE_LESSON",
                 lesson
             }))
+    },
+    deleteLesson: (item) => {
+        lessonService.deleteLesson(item._id)
+        .then(status => dispatch({
+            type: "DELETE_LESSON",
+            lessonToDelete:item
+        }))
     }
 })
 
