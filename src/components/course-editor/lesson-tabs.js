@@ -13,7 +13,8 @@ const LessonTabs = (
         ],
         findLessonsForModule,
         createLessonForModule,
-        deleteLesson
+        deleteLesson,
+        updateLesson
     }) => {
     const {courseId, moduleId, lessonId} = useParams();
     useEffect(() => {
@@ -33,6 +34,7 @@ const LessonTabs = (
                             active={lesson._id === lessonId}
                             to={`/courses/editor/${courseId}/${moduleId}/${lesson._id}`}
                             deleteItem={deleteLesson}
+                            updateItem={updateLesson}
                             item={lesson}/>
                     </li>
                 )
@@ -67,6 +69,12 @@ const dtpm = (dispatch) => ({
                 lesson
             }))
     },
+    updateLesson: (lesson) =>
+            lessonService.updateLesson(lesson._id, lesson)
+               .then(status => dispatch({
+                   type: "UPDATE_LESSON",
+                   lesson
+            })),
     deleteLesson: (item) => {
         lessonService.deleteLesson(item._id)
         .then(status => dispatch({
@@ -74,6 +82,8 @@ const dtpm = (dispatch) => ({
             lessonToDelete:item
         }))
     }
+
+
 })
 
 export default connect(stpm, dtpm)(LessonTabs)

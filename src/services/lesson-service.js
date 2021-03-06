@@ -23,6 +23,17 @@ export const deleteLesson = (lessonId) =>
         .then(response => response.json())
 
 
+export const updateLesson = (lessonId, lesson) =>
+    fetch(`${LESSONS_URL}/${lessonId}`, {
+        method: "PUT",
+        body: JSON.stringify(lesson),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+        .then(response => response.json())
+
+
 export default {
-    findLessonsForModule, createLessonForModule, deleteLesson
+    findLessonsForModule, createLessonForModule, deleteLesson, updateLesson
 }
