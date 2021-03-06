@@ -1,5 +1,5 @@
 const COURSES_URL = "https://wbdv-generic-server.herokuapp.com/api/mmorshed2/courses";
-const MODULES_URL = "https://wbdv-generic-server.herokuapp.com/api/mmorshed3/modules";
+const MODULES_URL = "https://wbdv-generic-server.herokuapp.com/api/mmorshed2/modules";
 
 export const createModuleForCourse = (courseId, module) =>
     fetch(`${COURSES_URL}/${courseId}/modules`, {
