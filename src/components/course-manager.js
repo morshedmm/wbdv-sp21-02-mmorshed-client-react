@@ -89,7 +89,7 @@ constructor(props) {
 
 
 
-      <Route path="/courses/table">
+      <Route path="/courses/table" exact={true}>
       <div class="row">
 
                 <div class="col-1">
@@ -116,7 +116,7 @@ constructor(props) {
         </div>
         </Route>
 
-        <Route path="/courses/grid">
+        <Route path="/courses/grid" exact={true}>
               <div class="row">
 
                         <div class="col-1">
@@ -147,7 +147,7 @@ constructor(props) {
 
 
 
-        <Route path="/courses/table">
+        <Route path="/courses/table" exact={true}>
           <CourseTable
               updateCourse={this.updateCourse}
               deleteCourse={this.deleteCourse}
@@ -157,7 +157,7 @@ constructor(props) {
                className="fa fa-plus fa-2x color-me-tomato float-right"></i>
                </div>
         </Route>
-        <Route path="/courses/grid">
+        <Route path="/courses/grid" exact={true}>
           <CourseGrid
               updateCourse={this.updateCourse}
               deleteCourse={this.deleteCourse}
@@ -178,10 +178,10 @@ constructor(props) {
           </Route>*/}
 
           <Route path={[
-                        "/courses/editor/:courseId",
-                        "/courses/editor/:courseId/:moduleId",
-                        "/courses/editor/:courseId/:moduleId/:lessonId",
-                        "/courses/editor/:courseId/:moduleId/:lessonId/:topicId"]}
+                        "/courses/table/editor/:courseId",
+                        "/courses/table/editor/:courseId/:moduleId",
+                        "/courses/table/editor/:courseId/:moduleId/:lessonId",
+                        "/courses/table/editor/:courseId/:moduleId/:lessonId/:topicId"]}
                            exact={true}
                            render={(props) => <CourseEditor {...props}/>}>
           </Route>

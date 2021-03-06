@@ -28,7 +28,7 @@ const TopicPills = (
                     <li className="nav-item add-padding-right-25">
                         <EditableItem
                             active={topic._id === topicId}
-                            to={`/courses/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
+                            to={`/courses/table/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
                             deleteItem={deleteTopic}
                             updateItem={updateTopic}
                             item={topic}/>

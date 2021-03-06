@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useParams} from "react-router-dom";
+import courseService from "../../services/course-service";
 import moduleReducer from "../../reducers/module-reducer";
 import lessonReducer from "../../reducers/lesson-reducer";
 import topicReducer from "../../reducers/topic-reducer";
@@ -21,6 +22,11 @@ const store = createStore(reducer)
 
 const CourseEditor = ({history}) => {
     const {courseId, moduleId} = useParams();
+
+    const [courseName, setCourseName] = useState(" ")
+    courseService.findCourseById(courseId)
+        .then(status => setCourseName(status.title))
+
     return (
     <Provider store={store}>
         <div>
@@ -32,7 +38,9 @@ const CourseEditor = ({history}) => {
                  {/*{courseId} {moduleId}*/}
                 <i onClick={() => history.goBack()}
                    className="fas fa-times float-left"></i>
-                <span className="add-padding-left">Web Dev Selected Course</span>
+                <span className="add-padding-left">
+                    {courseName}
+                </span>
                 {/*<i onClick={() => props.history.goBack()}*/}
                 {/*   className="fas fa-times float-right"></i>*/}
             </h2>

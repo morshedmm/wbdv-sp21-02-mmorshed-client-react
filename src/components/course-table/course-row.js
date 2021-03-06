@@ -34,7 +34,7 @@ const CourseRow = (
             {
                 !editing &&
 
-                <Link to={`/courses/editor/${course._id}`}>
+                <Link to={`/courses/table/editor/${course._id}`}>
                     <i class="fa fa-file add-padding-right-5px"></i>
                     {title}
                 </Link>
