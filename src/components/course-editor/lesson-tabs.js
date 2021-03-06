@@ -7,9 +7,11 @@ import lessonService from '../../services/lesson-service'
 const LessonTabs = (
     {
         lessons=[
+
             {_id: "123", title: "Lesson A"},
             {_id: "123", title: "Lesson B"},
             {_id: "123", title: "Lesson C"}
+
         ],
         findLessonsForModule,
         createLessonForModule,

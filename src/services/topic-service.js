@@ -11,7 +11,7 @@ export const createTopicForLesson = (lessonId, topic) =>
     })
         .then(response => response.json())
 
-export const findtopicsForLesson = (lessonId) =>
+export const findTopicsForLesson = (lessonId) =>
     fetch(`${LESSONS_URL}/${lessonId}/topics`)
         .then(response => response.json())
 

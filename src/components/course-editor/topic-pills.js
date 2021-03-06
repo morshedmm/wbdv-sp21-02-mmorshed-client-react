@@ -41,7 +41,7 @@ const TopicPills = (
             }
             <li>
                 <span className="float-right">
-                <i onClick={() => createTopicForLesson(LessonId)} className="fas fa-plus"></i>
+                <i onClick={() => createTopicForLesson(lessonId)} className="fas fa-plus"></i>
                 </span>
             </li>
         </ul>
@@ -51,7 +51,7 @@ const stpm = (state) => ({
     topics: state.topicReducer.topics
 })
 const dtpm = (dispatch) => ({
-    findTopicsForLesson: (LessonId) => {
+    findTopicsForLesson: (lessonId) => {
         console.log("LOAD TOPICS FOR LESSON:")
         console.log(lessonId)
         topicService.findTopicsForLesson(lessonId)
