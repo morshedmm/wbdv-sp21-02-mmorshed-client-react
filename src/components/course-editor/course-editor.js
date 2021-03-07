@@ -36,8 +36,9 @@ const CourseEditor = ({history}) => {
                     <i className="fas fa-arrow-left"></i>
                 </Link>*/}
                  {/*{courseId} {moduleId}*/}
-                <i onClick={() => history.goBack()}
-                   className="fas fa-times float-left"></i>
+                <Link to={`/courses/${layoutId}`}>
+                <i className="fas fa-times float-left"></i>
+                </Link>
                 <span className="add-padding-left">
                     {courseName}
                 </span>
