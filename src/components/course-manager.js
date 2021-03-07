@@ -178,10 +178,10 @@ constructor(props) {
           </Route>*/}
 
           <Route path={[
-                        "/courses/table/editor/:courseId",
-                        "/courses/table/editor/:courseId/:moduleId",
-                        "/courses/table/editor/:courseId/:moduleId/:lessonId",
-                        "/courses/table/editor/:courseId/:moduleId/:lessonId/:topicId"]}
+                        "/courses/:layoutId/editor/:courseId",
+                        "/courses/:layoutId/editor/:courseId/:moduleId",
+                        "/courses/:layoutId/editor/:courseId/:moduleId/:lessonId",
+                        "/courses/:layoutId/editor/:courseId/:moduleId/:lessonId/:topicId"]}
                            exact={true}
                            render={(props) => <CourseEditor {...props}/>}>
           </Route>

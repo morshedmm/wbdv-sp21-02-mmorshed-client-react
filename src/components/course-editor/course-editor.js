@@ -21,8 +21,8 @@ const reducer = combineReducers({
 const store = createStore(reducer)
 
 const CourseEditor = ({history}) => {
-    const {courseId, moduleId} = useParams();
-
+    const {layoutId, courseId, moduleId} = useParams();
+    console.log(layoutId)
     const [courseName, setCourseName] = useState(" ")
     courseService.findCourseById(courseId)
         .then(status => setCourseName(status.title))
