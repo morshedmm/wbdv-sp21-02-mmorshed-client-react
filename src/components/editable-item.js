@@ -24,7 +24,7 @@ const EditableItem = (
                     </div>
                     <div className="">
                     <span className="float-right">
-                    <i onClick={() => setEditing(true)} className="fas fa-edit"></i>
+                    <i onClick={() => {setEditing(true); setCahedItem(item)}} className="fas fa-edit"></i>
                     </span>
                     </div>
                 </div>
