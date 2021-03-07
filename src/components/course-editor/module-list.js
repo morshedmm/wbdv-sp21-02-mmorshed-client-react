@@ -11,12 +11,16 @@ const ModuleList = (
         deleteModule=(item) => alert("delete " + item._id),
         updateModule,
         findModulesForCourse=(courseId) => console.log(courseId),
-        resetTopic
+        resetTopic,
+        resetLesson,
+        topics= []
     }) => {
     const {layoutId, courseId, moduleId} = useParams();
     useEffect(() => {
          //console.log(layoutId)
-         resetTopic()
+         resetLesson();
+         resetTopic();
+         console.log(topics)
         findModulesForCourse(courseId)
     }, [])
     return(
@@ -44,7 +48,8 @@ const ModuleList = (
 
 const stpm = (state) => {
     return {
-        myModules: state.moduleReducer.modules
+        myModules: state.moduleReducer.modules,
+        topics: state.topicReducer.topics
     }
 }
 const dtpm = (dispatch) => {
@@ -54,6 +59,13 @@ const dtpm = (dispatch) => {
         type: "RESET_TOPIC"
         })
         },
+
+        resetLesson: () => {
+                dispatch({
+                type: "RESET_LESSON"
+                })
+        },
+
         createModule: (courseId) => {
             moduleService.createModuleForCourse(courseId, {title: "New Module"})
                 .then(theActualModule => dispatch({

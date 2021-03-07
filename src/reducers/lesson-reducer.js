@@ -39,6 +39,13 @@ const lessonReducer = (state=initialState, action) => {
                             }
                         })
                    }
+
+        case "RESET_LESSON":
+                            const newState2 = {
+                                ...state,
+                                lessons: []
+                            }
+                            return newState2
         default:
             return state
     }

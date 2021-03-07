@@ -10,7 +10,8 @@ const TopicPills = (
         findTopicsForLesson,
         createTopicForLesson,
         deleteTopic,
-        updateTopic
+        updateTopic,
+        resetTopic
     }) => {
     const {layoutId, courseId, moduleId, lessonId, topicId} = useParams();
     useEffect(() => {
@@ -18,6 +19,8 @@ const TopicPills = (
         if(moduleId !== "undefined" && typeof moduleId !== "undefined"
         && lessonId !== "undefined" && typeof lessonId !== "undefined") {
             findTopicsForLesson(lessonId)
+        } else {
+            resetTopic()
         }
     }, [moduleId, lessonId])
     return(
@@ -78,7 +81,13 @@ const dtpm = (dispatch) => ({
             type: "DELETE_TOPIC",
             topicToDelete:topic
         }))
-    }
+    },
+
+    resetTopic: () => {
+            dispatch({
+            type: "RESET_TOPIC"
+            })
+            },
 
 
 })
