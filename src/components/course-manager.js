@@ -181,7 +181,7 @@ constructor(props) {
                         "/courses/:layoutId/editor/:courseId",
                         "/courses/:layoutId/editor/:courseId/modules/:moduleId",
                         "/courses/:layoutId/editor/:courseId/modules/:moduleId/lessons/:lessonId",
-                        "/courses/:layoutId/editor/:courseId/modules/:moduleId/lessons/:lessonId/:topicId"]}
+                        "/courses/:layoutId/editor/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId"]}
                            exact={true}
                            render={(props) => <CourseEditor {...props}/>}>
           </Route>
