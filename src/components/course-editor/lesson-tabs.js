@@ -28,7 +28,7 @@ const LessonTabs = (
                     <li className="nav-item add-padding-right-30">
                         <EditableItem
                             active={lesson._id === lessonId}
-                            to={`/courses/${layoutId}/editor/${courseId}/${moduleId}/${lesson._id}`}
+                            to={`/courses/${layoutId}/editor/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}
                             deleteItem={deleteLesson}
                             updateItem={updateLesson}
                             item={lesson}/>
