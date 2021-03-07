@@ -50,8 +50,12 @@ const CourseEditor = ({history}) => {
                     <ModuleList/>
                 </div>
                 <div className="col-8">
+                    <div>
                     <LessonTabs/>
+                    </div>
+                    <div>
                     <TopicPills/>
+                    </div>
                 </div>
 
             </div>
