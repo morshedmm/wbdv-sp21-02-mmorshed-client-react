@@ -11,7 +11,7 @@ export const deleteCourse = (courseId) =>
     })
         .then(response => response.json())
 
-// findCourseById is NOT used in the implementation
+
 
 export const findCourseById = (courseId) =>
     fetch(`${COURSES_URL}/${courseId}`, {
