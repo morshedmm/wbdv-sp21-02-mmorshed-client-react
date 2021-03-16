@@ -56,6 +56,9 @@ const CourseEditor = ({history}) => {
                     <div>
                     <TopicPills/>
                     </div>
+                    <div>
+                    <WidgetList/>
+                    </div>
                 </div>
 
             </div>
