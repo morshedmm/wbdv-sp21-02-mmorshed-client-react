@@ -19,7 +19,7 @@ const WidgetList = () => {
         // TODO: move server communication to widget-service.js
         fetch(`http://localhost:8080/api/topics/${topicId}/widgets`, {
             method: "POST",
-            body: JSON.stringify({type: "HEADING", size: 1, text: "New Widget"}),
+            body: JSON.stringify({type: "PARAGRAPH", size: 1, text: "New Widget"}),
             headers: {
                 'content-type': 'application/json'
             }
@@ -84,7 +84,7 @@ const WidgetList = () => {
                     )
                 }
             </ul>
-            {JSON.stringify(widgets)}
+            {/*{JSON.stringify(widgets)}*/}
         </div>
     )
 }
