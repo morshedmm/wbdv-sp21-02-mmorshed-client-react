@@ -50,7 +50,7 @@ const WidgetList = () => {
     return(
         <div>
             <i onClick={createWidgetForTopic} className="fas fa-plus fa-2x float-right"></i>
-            <h2>Widget List ({widgets.length}) {editingWidget.id}</h2>
+            {/*<h2>Widget List ({widgets.length}) {editingWidget.id}</h2>*/}
             <ul className="list-group">
                 {
                     widgets.map(widget =>
