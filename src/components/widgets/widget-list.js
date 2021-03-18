@@ -17,7 +17,8 @@ const WidgetList = (
 
 ) => {
     // TODO: move state management to widgets-reducer.js
-    const {topicId} = useParams();
+    //const {topicId} = useParams();
+    const {layoutId, courseId, moduleId, lessonId, topicId} = useParams();
 
     //const [widgets, setWidgets] = useState([])
     const [editingWidget, setEditingWidget] = useState({});
@@ -28,7 +29,7 @@ const WidgetList = (
         //fetch(`http://localhost:8080/api/topics/${topicId}/widgets`)
         //    .then(response => response.json())
         //    .then(widgets => setWidgets(widgets))
-    }, [topicId])
+    }, [moduleId, lessonId, topicId])
     //const createWidgetForTopic = () => {
     //    // TODO: move server communication to widget-service.js
     //    fetch(`http://localhost:8080/api/topics/${topicId}/widgets`, {
@@ -63,7 +64,7 @@ const WidgetList = (
 
     return(
         <div>
-            <i onClick={createWidgetForTopic} className="fas fa-plus fa-2x float-right"></i>
+            <i onClick={() => createWidgetForTopic(topicId)} className="fas fa-plus fa-2x float-right"></i>
             {/*<h2>Widget List ({widgets.length}) {editingWidget.id}</h2>*/}
             <ul className="list-group">
                 {
@@ -118,7 +119,7 @@ const dtpm = (dispatch) => ({
     createWidgetForTopic: (topicId) => {
         //console.log("CREATE TOPIC FOR LESSON: " + lessonId)
         widgetService
-            .createWidgetForTopic(topicId, {type: "HEADING", size: 1, text: "New Widget"})
+            .createWidgetForTopic(topicId, {type: "PARAGRAPH", size: 1, text: "New Widget4"})
             .then(widget => dispatch({
                 type: "CREATE_WIDGET",
                 widget
