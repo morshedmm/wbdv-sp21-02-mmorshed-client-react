@@ -1,12 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const HeadingWidget = ({widget, editing}) => {
+const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, newText, setNewText}) => {
+    //setNewText("hello");
+    //console.log(newText);
+
     return(
         <>
             {
                 editing &&
                     <>
-                        <input value={widget.text} className="form-control"/>
+                        <input value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control"/>
                         <select value={widget.size} className="form-control">
                             <option value={1}>Heading 1</option>
                             <option value={2}>Heading 2</option>
@@ -15,6 +18,8 @@ const HeadingWidget = ({widget, editing}) => {
                             <option value={5}>Heading 5</option>
                             <option value={6}>Heading 6</option>
                         </select>
+                        {/*<i onClick={() => deleteWidget(widget)}
+                        className="fas fa-2x fa-trash float-right"></i>*/}
                     </>
             }
             {
@@ -28,6 +33,9 @@ const HeadingWidget = ({widget, editing}) => {
                         {widget.size === 6 && <h6>{widget.text}</h6>}
                     </>
             }
+
+
+
         </>
     )
 }

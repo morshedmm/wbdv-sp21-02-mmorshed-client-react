@@ -22,6 +22,9 @@ const WidgetList = (
 
     //const [widgets, setWidgets] = useState([])
     const [editingWidget, setEditingWidget] = useState({});
+    //const [updated, setUpdated] = useState(false);
+    const [newText, setNewText] = useState("")
+    console.log(newText)
     useEffect(() => {
     findWidgetsForTopic(topicId);
         // TODO: move server communication to widget-service.js
@@ -74,7 +77,7 @@ const WidgetList = (
                             editingWidget.id === widget.id &&
                                 <>
                                     <i onClick={() => {
-                                        updateWidget(widget.id, editingWidget)
+                                        updateWidget({...editingWidget,text:newText});setEditingWidget({});
                                     }} className="fas fa-2x fa-check float-right"></i>
                                     <i onClick={() => deleteWidget(widget)}
                                     className="fas fa-2x fa-trash float-right"></i>
@@ -82,12 +85,16 @@ const WidgetList = (
                         }
                         {
                             editingWidget.id !== widget.id &&
-                            <i onClick={() => setEditingWidget(widget)} className="fas fa-2x fa-cog float-right"></i>
+                            <i onClick={() => {setEditingWidget(widget); setNewText(widget.text)}} className="fas fa-2x fa-cog float-right"></i>
                         }
                         {
                             widget.type === "HEADING" &&
                             <HeadingWidget
+                                newText = {newText}
                                 editing={editingWidget.id === widget.id}
+                                updateWidget = {updateWidget}
+                                deleteWidget = {deleteWidget}
+                                setNewText = {setNewText}
                                 widget={widget}/>
                         }
                         {
@@ -96,6 +103,7 @@ const WidgetList = (
                                 editing={editingWidget.id === widget.id}
                                 widget={widget}/>
                         }
+
                     </li>
                     )
                 }
