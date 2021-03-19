@@ -24,6 +24,7 @@ const WidgetList = (
     const [editingWidget, setEditingWidget] = useState({});
     //const [updated, setUpdated] = useState(false);
     const [newText, setNewText] = useState("")
+    const [newSize, setNewSize] = useState(1)
     console.log(newText)
     useEffect(() => {
     findWidgetsForTopic(topicId);
@@ -77,7 +78,7 @@ const WidgetList = (
                             editingWidget.id === widget.id &&
                                 <>
                                     <i onClick={() => {
-                                        updateWidget({...editingWidget,text:newText});setEditingWidget({});
+                                        updateWidget({...editingWidget,text:newText, size:newSize});setEditingWidget({});
                                     }} className="fas fa-2x fa-check float-right"></i>
                                     <i onClick={() => deleteWidget(widget)}
                                     className="fas fa-2x fa-trash float-right"></i>
@@ -85,16 +86,19 @@ const WidgetList = (
                         }
                         {
                             editingWidget.id !== widget.id &&
-                            <i onClick={() => {setEditingWidget(widget); setNewText(widget.text)}} className="fas fa-2x fa-cog float-right"></i>
+                            <i onClick={() => {setEditingWidget(widget); setNewText(widget.text);
+                            setNewSize(widget.size)}} className="fas fa-2x fa-cog float-right"></i>
                         }
                         {
                             widget.type === "HEADING" &&
                             <HeadingWidget
                                 newText = {newText}
+                                newSize = {newSize}
                                 editing={editingWidget.id === widget.id}
                                 updateWidget = {updateWidget}
                                 deleteWidget = {deleteWidget}
                                 setNewText = {setNewText}
+                                setNewSize = {setNewSize}
                                 widget={widget}/>
                         }
                         {
