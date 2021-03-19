@@ -108,3 +108,20 @@ code {
 .list-group-item.active a {
   color: white;
 }
+
+.background-color-tomato {
+    background-color: tomato
+}
+
+
+.background-color-blue {
+    background-color: AliceBlue
+}
+
+.background-color-grey {
+    background-color: grey
+}
+
+.color-red {
+    color: red;
+}

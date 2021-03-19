@@ -42,7 +42,7 @@ const CourseEditor = ({history}) => {
                 <Link to={`/courses/${layoutId}`}>
                 <i className="fas fa-times float-left"></i>
                 </Link>
-                <span className="add-padding-left">
+                <span className="add-padding-left color-red">
                     {courseName}
                 </span>
                 {/*<i onClick={() => props.history.goBack()}*/}

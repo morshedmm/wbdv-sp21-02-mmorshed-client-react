@@ -20,7 +20,7 @@ const LessonTabs = (
         }
     }, [moduleId])
     return(
-    <div>
+    <div className="background-color-blue">
         {/*<h2>Lessons</h2>*/}
         <ul className="nav nav-tabs">
             {
