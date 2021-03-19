@@ -14,7 +14,7 @@ const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewT
                     </select>
 
 
-                
+
                     <textarea value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control"></textarea>
                 </>
             }

@@ -9,6 +9,14 @@ const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, ne
             {
                 editing &&
                     <>
+
+                        <select value={newType} onChange={(event) => setNewType(event.target.value)}
+                                                                        className="form-control">
+                                                    <option value={"HEADING"}>Heading</option>
+                                                    <option value={"PARAGRAPH"}>Paragraph</option>
+
+                        </select>
+                        
                         <input value={newText} onChange={(event) => setNewText(event.target.value)}
                         className="form-control"/>
                         <select value={newSize} onChange={(event) => setNewSize(event.target.value)}
@@ -21,12 +29,7 @@ const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, ne
                             <option value={6}>Heading 6</option>
                         </select>
 
-                        <select value={newType} onChange={(event) => setNewType(event.target.value)}
-                                                className="form-control">
-                            <option value={"HEADING"}>Heading</option>
-                            <option value={"PARAGRAPH"}>Paragraph</option>
 
-                        </select>
                         {/*<i onClick={() => deleteWidget(widget)}
                         className="fas fa-2x fa-trash float-right"></i>*/}
                     </>
