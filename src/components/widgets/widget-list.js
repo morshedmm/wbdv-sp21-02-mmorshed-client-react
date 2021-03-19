@@ -109,8 +109,10 @@ const WidgetList = (
                             widget.type === "PARAGRAPH" &&
                             <ParagraphWidget
                                 newText = {newText}
+                                newType = {newType}
                                 editing={editingWidget.id === widget.id}
                                 setNewText = {setNewText}
+                                setNewType = {setNewType}
                                 widget={widget}/>
                         }
 

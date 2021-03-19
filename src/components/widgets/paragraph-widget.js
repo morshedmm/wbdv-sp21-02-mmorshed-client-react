@@ -1,11 +1,20 @@
 import React from 'react'
 
-const ParagraphWidget = ({widget, editing, newText, setNewText}) => {
+const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewType}) => {
     return(
         <>
             {
                 editing &&
                 <>
+                    <select value={newType} onChange={(event) => setNewType(event.target.value)}
+                                                                    className="form-control">
+                                                <option value={"HEADING"}>Heading</option>
+                                                <option value={"PARAGRAPH"}>Paragraph</option>
+
+                    </select>
+
+
+                
                     <textarea value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control"></textarea>
                 </>
             }
