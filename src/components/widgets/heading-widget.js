@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, newText, setNewText, newSize, setNewSize}) => {
+const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, newText, setNewText, newSize, setNewSize, newType, setNewType}) => {
     //setNewText("hello");
     //console.log(newText);
 
@@ -19,6 +19,13 @@ const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, ne
                             <option value={4}>Heading 4</option>
                             <option value={5}>Heading 5</option>
                             <option value={6}>Heading 6</option>
+                        </select>
+
+                        <select value={newType} onChange={(event) => setNewType(event.target.value)}
+                                                className="form-control">
+                            <option value={"HEADING"}>Heading</option>
+                            <option value={"PARAGRAPH"}>Paragraph</option>
+
                         </select>
                         {/*<i onClick={() => deleteWidget(widget)}
                         className="fas fa-2x fa-trash float-right"></i>*/}
