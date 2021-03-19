@@ -34,7 +34,7 @@ const WidgetList = (
         //fetch(`http://localhost:8080/api/topics/${topicId}/widgets`)
         //    .then(response => response.json())
         //    .then(widgets => setWidgets(widgets))
-    }, [moduleId, lessonId, topicId])
+    }, [moduleId, lessonId, topicId, widgets])
     //const createWidgetForTopic = () => {
     //    // TODO: move server communication to widget-service.js
     //    fetch(`http://localhost:8080/api/topics/${topicId}/widgets`, {
@@ -80,7 +80,7 @@ const WidgetList = (
                                 <>
                                     <i onClick={() => {
                                         updateWidget({...editingWidget, text:newText, size:newSize, type:newType});
-                                        findWidgetsForTopic(topicId); setEditingWidget({});
+                                        {setEditingWidget({});}
                                     }} className="fas fa-2x fa-check float-right"></i>
                                     <i onClick={() => deleteWidget(widget)}
                                     className="fas fa-2x fa-trash float-right"></i>

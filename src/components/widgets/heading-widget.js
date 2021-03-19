@@ -16,7 +16,7 @@ const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, ne
                                                     <option value={"PARAGRAPH"}>Paragraph</option>
 
                         </select>
-                        
+
                         <input value={newText} onChange={(event) => setNewText(event.target.value)}
                         className="form-control"/>
                         <select value={newSize} onChange={(event) => setNewSize(event.target.value)}
@@ -45,6 +45,11 @@ const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, ne
                         {widget.size === 6 && <h6>{widget.text}</h6>}
                     </>
             }
+
+
+
+
+
 
 
 
