@@ -24,7 +24,7 @@ const WidgetList = (
     const [newText, setNewText] = useState("")
     const [newSize, setNewSize] = useState()
     const [newType, setNewType] = useState()
-    
+
     useEffect(() => {
     findWidgetsForTopic(topicId);
 
