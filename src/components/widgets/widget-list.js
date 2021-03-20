@@ -16,17 +16,15 @@ const WidgetList = (
         }
 
 ) => {
-    // TODO: move state management to widgets-reducer.js
-    //const {topicId} = useParams();
+
     const {layoutId, courseId, moduleId, lessonId, topicId} = useParams();
 
-    //const [widgets, setWidgets] = useState([])
     const [editingWidget, setEditingWidget] = useState({});
-    //const [updated, setUpdated] = useState(false);
+
     const [newText, setNewText] = useState("")
     const [newSize, setNewSize] = useState()
     const [newType, setNewType] = useState()
-    //console.log(newText)
+    
     useEffect(() => {
     findWidgetsForTopic(topicId);
 
