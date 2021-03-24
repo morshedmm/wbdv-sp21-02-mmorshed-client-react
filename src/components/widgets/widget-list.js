@@ -75,9 +75,11 @@ const WidgetList = (
                             <ParagraphWidget
                                 newText = {newText}
                                 newType = {newType}
+                                newSize = {newSize}
                                 editing={editingWidget.id === widget.id}
                                 setNewText = {setNewText}
                                 setNewType = {setNewType}
+                                setNewSize = {setNewSize}
                                 widget={widget}/>
                         }
 

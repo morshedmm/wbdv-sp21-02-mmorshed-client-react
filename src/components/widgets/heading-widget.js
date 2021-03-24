@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, newText, setNewText, newSize, setNewSize, newType, setNewType}) => {
     //setNewText("hello");
     //console.log(newText);
+    const [headingType, setHeadingType] = useState(true);
 
     return(
         <>
@@ -10,15 +11,19 @@ const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, ne
                 editing &&
                     <>
 
-                        <select value={newType} onChange={(event) => setNewType(event.target.value)}
+                        <select value={newType} onChange={(event) => {setNewType(event.target.value);setHeadingType(false)}}
                                                                         className="form-control">
                                                     <option value={"HEADING"}>Heading</option>
                                                     <option value={"PARAGRAPH"}>Paragraph</option>
 
                         </select>
 
+                        {/*<input value={newText} onChange={(event) => setNewText(event.target.value)}
+                        className="form-control"/>*/}
+                        { headingType &&
+                        <>
                         <input value={newText} onChange={(event) => setNewText(event.target.value)}
-                        className="form-control"/>
+                                                className="form-control"/>
                         <select value={newSize} onChange={(event) => setNewSize(event.target.value)}
                         className="form-control">
                             <option value={1}>Heading 1</option>
@@ -28,6 +33,14 @@ const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, ne
                             <option value={5}>Heading 5</option>
                             <option value={6}>Heading 6</option>
                         </select>
+                        </>
+                        }
+
+                        { !headingType &&
+                            <textarea value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control"></textarea>
+
+
+                        }
 
 
                         {/*<i onClick={() => deleteWidget(widget)}
