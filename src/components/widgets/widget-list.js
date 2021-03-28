@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {connect} from "react-redux";
 import HeadingWidget from "./heading-widget";
+import ListWidget from "./list-widget";
+import ImageWidget from "./image-widget";
 import ParagraphWidget from "./paragraph-widget";
 import {useParams} from "react-router-dom";
 import widgetService from '../../services/widget-service'
@@ -20,6 +22,9 @@ const WidgetList = (
     const {layoutId, courseId, moduleId, lessonId, topicId} = useParams();
 
     const [editingWidget, setEditingWidget] = useState({});
+    //
+    const [widget, setWidget] = useState({});
+    //
 
     const [newText, setNewText] = useState("")
     const [newSize, setNewSize] = useState()
@@ -80,6 +85,21 @@ const WidgetList = (
                                 setNewText = {setNewText}
                                 setNewType = {setNewType}
                                 setNewSize = {setNewSize}
+                                widget={widget}/>
+                        }
+
+                        {
+                            widget.type === "LIST" &&
+                            <ListWidget
+                                setWidget={setWidget}
+                                editing={editingWidget.id === widget.id}
+                                widget={widget}/>
+                        }
+                        {
+                            widget.type === "IMAGE" &&
+                            <ImageWidget
+                                setWidget={setWidget}
+                                editing={editingWidget.id === widget.id}
                                 widget={widget}/>
                         }
 
