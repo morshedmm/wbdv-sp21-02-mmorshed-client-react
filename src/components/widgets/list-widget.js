@@ -3,7 +3,7 @@ import React from 'react'
 const ListWidget = ({widget, setWidget, editing, newText, setNewText, newOrder, setNewOrder}) => {
     return (
         <div>
-            <h2>List Widget</h2>
+            {/*<h2>List Widget</h2>*/}
             {
                 !editing &&
                     <>

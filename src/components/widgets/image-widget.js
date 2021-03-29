@@ -1,18 +1,19 @@
 import React from 'react'
 
-const ImageWidget = ({widget, setWidget, editing}) => {
+const ImageWidget = ({widget, setWidget, editing, newUrl, setNewUrl, newWidth, setNewWidth, newHeight, setNewHeight}) => {
     return (
         <div>
-            <h2>Image Widget</h2>
+            {/*<h2>Image Widget</h2>*/}
+            <img width={newWidth} height={newHeight} src= {newUrl}/>
             {
                 editing &&
                     <div>
                         URL
-                        <input value={widget.url} className="form-control"/>
+                        <input value={newUrl} onChange={(event) => setNewUrl(event.target.value)} className="form-control"/>
                         width
-                        <input value={widget.width} className="form-control"/>
+                        <input value={newWidth} onChange={(event) => setNewWidth(event.target.value)} className="form-control"/>
                         height
-                        <input value={widget.height} className="form-control"/>
+                        <input value={newHeight} onChange={(event) => setNewHeight(event.target.value)} className="form-control"/>
                     </div>
             }
         </div>

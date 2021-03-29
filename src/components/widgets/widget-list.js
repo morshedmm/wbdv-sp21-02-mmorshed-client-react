@@ -30,6 +30,9 @@ const WidgetList = (
     const [newSize, setNewSize] = useState()
     const [newType, setNewType] = useState()
     const [newOrder, setNewOrder] = useState(false)
+    const [newWidth, setNewWidth] = useState()
+    const [newHeight, setNewHeight] = useState()
+    const [newUrl, setNewUrl] = useState()
 
     useEffect(() => {
     findWidgetsForTopic(topicId);
@@ -50,7 +53,7 @@ const WidgetList = (
                             editingWidget.id === widget.id &&
                                 <>
                                     <i onClick={() => {
-                                        updateWidget({...editingWidget, text:newText, size:newSize, type:newType, ordered:newOrder});console.log(newOrder);
+                                        updateWidget({...editingWidget, text:newText, size:newSize, type:newType, ordered:newOrder, url:newUrl, width:newWidth, height:newHeight});
                                         {setEditingWidget({});}
                                     }} className="fas fa-2x fa-check float-right"></i>
                                     <i onClick={() => deleteWidget(widget)}
@@ -60,7 +63,8 @@ const WidgetList = (
                         {
                             editingWidget.id !== widget.id &&
                             <i onClick={() => {setEditingWidget(widget); setNewText(widget.text);
-                            setNewSize(widget.size); setNewType(widget.type); setNewOrder(widget.ordered)}} className="fas fa-2x fa-cog float-right"></i>
+                            setNewSize(widget.size); setNewType(widget.type); setNewOrder(widget.ordered); setNewUrl(widget.url); setNewWidth(widget.width);
+                            setNewHeight(widget.height)}} className="fas fa-2x fa-cog float-right"></i>
                         }
                         {
                             widget.type === "HEADING" &&
@@ -104,6 +108,12 @@ const WidgetList = (
                             widget.type === "IMAGE" &&
                             <ImageWidget
                                 setWidget={setWidget}
+                                newUrl = {newUrl}
+                                newWidth = {newWidth}
+                                newHeight = {newHeight}
+                                setNewUrl = {setNewUrl}
+                                setNewWidth = {setNewWidth}
+                                setNewHeight = {setNewHeight}
                                 editing={editingWidget.id === widget.id}
                                 widget={widget}/>
                         }
