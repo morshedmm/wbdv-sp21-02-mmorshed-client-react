@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ListWidget = ({widget, setWidget, editing}) => {
+const ListWidget = ({widget, setWidget, editing, newText, setNewText, newOrder, setNewOrder}) => {
     return (
         <div>
             <h2>List Widget</h2>
@@ -36,10 +36,10 @@ const ListWidget = ({widget, setWidget, editing}) => {
             {
                 editing &&
                 <div>
-                    <input type="checkbox"/> Ordered
+                    <input type="checkbox" checked={newOrder} onChange={(event) => {setNewOrder(event.target.checked);}} /> Ordered
                     <br/>
                     List Items
-                    <textarea rows={10} value={widget.text} className="form-control">
+                    <textarea rows={10} value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control">
 
                     </textarea>
                 </div>

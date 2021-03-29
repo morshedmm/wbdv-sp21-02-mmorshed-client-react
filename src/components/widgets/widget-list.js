@@ -29,6 +29,7 @@ const WidgetList = (
     const [newText, setNewText] = useState("")
     const [newSize, setNewSize] = useState()
     const [newType, setNewType] = useState()
+    const [newOrder, setNewOrder] = useState(false)
 
     useEffect(() => {
     findWidgetsForTopic(topicId);
@@ -49,7 +50,7 @@ const WidgetList = (
                             editingWidget.id === widget.id &&
                                 <>
                                     <i onClick={() => {
-                                        updateWidget({...editingWidget, text:newText, size:newSize, type:newType});
+                                        updateWidget({...editingWidget, text:newText, size:newSize, type:newType, ordered:newOrder});console.log(newOrder);
                                         {setEditingWidget({});}
                                     }} className="fas fa-2x fa-check float-right"></i>
                                     <i onClick={() => deleteWidget(widget)}
@@ -59,7 +60,7 @@ const WidgetList = (
                         {
                             editingWidget.id !== widget.id &&
                             <i onClick={() => {setEditingWidget(widget); setNewText(widget.text);
-                            setNewSize(widget.size); setNewType(widget.type)}} className="fas fa-2x fa-cog float-right"></i>
+                            setNewSize(widget.size); setNewType(widget.type); setNewOrder(widget.ordered)}} className="fas fa-2x fa-cog float-right"></i>
                         }
                         {
                             widget.type === "HEADING" &&
@@ -91,6 +92,10 @@ const WidgetList = (
                         {
                             widget.type === "LIST" &&
                             <ListWidget
+                                newText = {newText}
+                                setNewText = {setNewText}
+                                newOrder = {newOrder}
+                                setNewOrder = {setNewOrder}
                                 setWidget={setWidget}
                                 editing={editingWidget.id === widget.id}
                                 widget={widget}/>
