@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, newText, setNewText, newSize, setNewSize, newType, setNewType}) => {
+const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, newText, setNewText, newSize, setNewSize, newType, setNewType, newOrder, setNewOrder}) => {
     //setNewText("hello");
     //console.log(newText);
     const [headingType, setHeadingType] = useState(true);
@@ -38,9 +38,22 @@ const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, ne
                         </>
                         }
 
-                        { !headingType &&
+                        { !headingType && newType==="PARAGRAPH" &&
                             <textarea value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control"></textarea>
 
+
+                        }
+
+                        { !headingType && newType==="LIST" &&
+                        <>
+                        <input type="checkbox" checked={newOrder} onChange={(event) => {setNewOrder(event.target.checked);}}/>
+                        Ordered
+                        <br/>
+                        List Items
+                        <textarea placeholder="Enter one list item per line" rows={10} value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control">
+
+                        </textarea>
+                        </>
 
                         }
 

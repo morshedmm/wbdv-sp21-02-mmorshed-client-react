@@ -1,6 +1,6 @@
 import React, {useState}  from 'react'
 
-const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewType, newSize, setNewSize}) => {
+const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewType, newSize, setNewSize, newOrder, setNewOrder}) => {
 
     const [paragraphType, setParagraphType] = useState(true);
     return(
@@ -21,7 +21,7 @@ const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewT
                     {   paragraphType &&
                     <textarea value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control"></textarea>
                     }
-                { !paragraphType &&
+                { !paragraphType && newType==="HEADING" &&
                 <>
                                         <input value={newText} onChange={(event) => setNewText(event.target.value)}
                                                                                         className="form-control"/>
@@ -35,6 +35,19 @@ const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewT
                                             <option value={6}>Heading 6</option>
                                         </select>
                 </>
+                }
+
+                { !paragraphType && newType==="LIST" &&
+                                        <>
+                                        <input type="checkbox" checked={newOrder} onChange={(event) => {setNewOrder(event.target.checked);}}/>
+                                        Ordered
+                                        <br/>
+                                        List Items
+                                        <textarea placeholder="Enter one list item per line" rows={10} value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control">
+
+                                        </textarea>
+                                        </>
+
                 }
                 </>
             }

@@ -78,6 +78,8 @@ const WidgetList = (
                                 setNewText = {setNewText}
                                 setNewSize = {setNewSize}
                                 setNewType = {setNewType}
+                                newOrder = {newOrder}
+                                setNewOrder = {setNewOrder}
                                 widget={widget}/>
                         }
                         {
@@ -90,6 +92,8 @@ const WidgetList = (
                                 setNewText = {setNewText}
                                 setNewType = {setNewType}
                                 setNewSize = {setNewSize}
+                                newOrder = {newOrder}
+                                setNewOrder = {setNewOrder}
                                 widget={widget}/>
                         }
 
