@@ -118,6 +118,8 @@ const WidgetList = (
                                 setNewType = {setNewType}
                                 newOrder = {newOrder}
                                 setNewOrder = {setNewOrder}
+                                newSize = {newSize}
+                                setNewSize = {setNewSize}
                                 setWidget={setWidget}
                                 editing={editingWidget.id === widget.id}
                                 widget={widget}/>
