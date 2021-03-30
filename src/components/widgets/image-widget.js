@@ -4,7 +4,7 @@ const ImageWidget = ({widget, setWidget, editing, newUrl, setNewUrl, newWidth, s
     return (
         <div>
             {/*<h2>Image Widget</h2>*/}
-            <img width={newWidth} height={newHeight} src= {newUrl}/>
+            <img width={widget.width} height={widget.height} src= {widget.url}/>
             {
                 editing &&
                     <div>
