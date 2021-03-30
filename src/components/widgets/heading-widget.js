@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
-const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, newText, setNewText, newSize, setNewSize, newType, setNewType, newOrder, setNewOrder}) => {
+const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, newText, setNewText, newSize,
+setNewSize, newType, setNewType, newOrder, setNewOrder, newUrl, setNewUrl, newWidth, setNewWidth, newHeight, setNewHeight}) => {
     //setNewText("hello");
     //console.log(newText);
     const [headingType, setHeadingType] = useState(true);
@@ -55,6 +56,18 @@ const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, ne
                         </textarea>
                         </>
 
+                        }
+
+                        { !headingType && newType==="IMAGE" &&
+                        <>
+                        URL
+                        <input placeholder="Image URL" value={newUrl} onChange={(event) => {setNewUrl(event.target.value); setNewWidth(); setNewHeight();}} className="form-control"/>
+                        width
+                        <input value={newWidth} onChange={(event) => setNewWidth(event.target.value)} className="form-control"/>
+                        height
+                        <input value={newHeight} onChange={(event) => setNewHeight(event.target.value)} className="form-control"/>
+
+                        </>
                         }
 
 

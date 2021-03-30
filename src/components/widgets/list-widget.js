@@ -1,6 +1,7 @@
 import React from 'react'
 
-const ListWidget = ({widget, setWidget, editing, newText, setNewText, newOrder, setNewOrder, newType, setNewType}) => {
+const ListWidget = ({widget, setWidget, editing, newText, setNewText, newOrder, setNewOrder, newType, setNewType,
+                    newUrl, setNewUrl, newWidth, setNewWidth, newHeight, setNewHeight}) => {
     return (
         <div>
             {/*<h2>List Widget</h2>*/}

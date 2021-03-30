@@ -1,6 +1,7 @@
 import React, {useState}  from 'react'
 
-const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewType, newSize, setNewSize, newOrder, setNewOrder}) => {
+const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewType, newSize, setNewSize, newOrder, setNewOrder,
+                         newUrl, setNewUrl, newWidth, setNewWidth, newHeight, setNewHeight}) => {
 
     const [paragraphType, setParagraphType] = useState(true);
     return(
@@ -47,6 +48,19 @@ const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewT
 
                                         </textarea>
                                         </>
+
+                }
+
+                { !paragraphType && newType==="IMAGE" &&
+                <>
+                URL
+                <input placeholder="Image URL" value={newUrl} onChange={(event) => {setNewUrl(event.target.value); setNewWidth(); setNewHeight();}} className="form-control"/>
+                width
+                <input value={newWidth} onChange={(event) => setNewWidth(event.target.value)} className="form-control"/>
+                height
+                <input value={newHeight} onChange={(event) => setNewHeight(event.target.value)} className="form-control"/>
+
+                </>
 
                 }
                 </>

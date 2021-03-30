@@ -80,6 +80,12 @@ const WidgetList = (
                                 setNewType = {setNewType}
                                 newOrder = {newOrder}
                                 setNewOrder = {setNewOrder}
+                                newUrl = {newUrl}
+                                newWidth = {newWidth}
+                                newHeight = {newHeight}
+                                setNewUrl = {setNewUrl}
+                                setNewWidth = {setNewWidth}
+                                setNewHeight = {setNewHeight}
                                 widget={widget}/>
                         }
                         {
@@ -94,6 +100,12 @@ const WidgetList = (
                                 setNewSize = {setNewSize}
                                 newOrder = {newOrder}
                                 setNewOrder = {setNewOrder}
+                                newUrl = {newUrl}
+                                newWidth = {newWidth}
+                                newHeight = {newHeight}
+                                setNewUrl = {setNewUrl}
+                                setNewWidth = {setNewWidth}
+                                setNewHeight = {setNewHeight}
                                 widget={widget}/>
                         }
 
