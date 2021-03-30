@@ -12,6 +12,7 @@ const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewT
                                                                     className="form-control">
                                                 <option value={"HEADING"}>Heading</option>
                                                 <option value={"PARAGRAPH"}>Paragraph</option>
+                                                <option value={"LIST"}>LIST</option>
 
                     </select>
 

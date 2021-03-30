@@ -15,6 +15,7 @@ const HeadingWidget = ({widget, editing, updated, updateWidget, deleteWidget, ne
                                                                         className="form-control">
                                                     <option value={"HEADING"}>Heading</option>
                                                     <option value={"PARAGRAPH"}>Paragraph</option>
+                                                    <option value={"LIST"}>LIST</option>
 
                         </select>
 
