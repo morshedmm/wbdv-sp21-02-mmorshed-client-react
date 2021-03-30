@@ -9,7 +9,7 @@ const ImageWidget = ({widget, setWidget, editing, newUrl, setNewUrl, newWidth, s
                 editing &&
                     <div>
                         URL
-                        <input value={newUrl} onChange={(event) => setNewUrl(event.target.value)} className="form-control"/>
+                        <input value={newUrl} onChange={(event) => {setNewUrl(event.target.value); setNewWidth(); setNewHeight();}} className="form-control"/>
                         width
                         <input value={newWidth} onChange={(event) => setNewWidth(event.target.value)} className="form-control"/>
                         height
