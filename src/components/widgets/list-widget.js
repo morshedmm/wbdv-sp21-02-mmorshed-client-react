@@ -91,8 +91,18 @@ const ListWidget = ({widget, setWidget, editing, newText, setNewText, newOrder, 
 
             }
 
+            { editing && !listType && newType==="IMAGE" &&
+               <>
+                  URL
+                  <input placeholder="Image URL" value={newUrl} onChange={(event) => {setNewUrl(event.target.value); setNewWidth(); setNewHeight();}} className="form-control"/>
+                  width
+                  <input value={newWidth} onChange={(event) => setNewWidth(event.target.value)} className="form-control"/>
+                  height
+                  <input value={newHeight} onChange={(event) => setNewHeight(event.target.value)} className="form-control"/>
 
+               </>
 
+            }
             {/*<textarea></textarea>*/}
         </div>
     )

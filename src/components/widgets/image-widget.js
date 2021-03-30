@@ -9,7 +9,7 @@ const ImageWidget = ({widget, setWidget, editing, newUrl, setNewUrl, newWidth, s
                 editing &&
                     <div>
                         <select value={newType} onChange={(event) => {setNewType(event.target.value);}}
-                                                                                                                    className="form-control">
+                                                                              className="form-control">
                                        <option value={"HEADING"}>Heading</option>
                                        <option value={"PARAGRAPH"}>Paragraph</option>
                                        <option value={"LIST"}>LIST</option>
