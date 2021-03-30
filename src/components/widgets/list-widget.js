@@ -81,7 +81,7 @@ const ListWidget = ({widget, setWidget, editing, newText, setNewText, newOrder, 
                                                         <option value={6}>Heading 6</option>
                                                     </select>
                             </>
-                            }
+            }
 
             { editing && !listType && newType==="PARAGRAPH" &&
                             <>

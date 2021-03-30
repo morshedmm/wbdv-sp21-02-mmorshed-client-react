@@ -134,6 +134,10 @@ const WidgetList = (
                                 setNewUrl = {setNewUrl}
                                 setNewWidth = {setNewWidth}
                                 setNewHeight = {setNewHeight}
+                                newText = {newText}
+                                setNewText = {setNewText}
+                                newOrder = {newOrder}
+                                setNewOrder = {setNewOrder}
                                 newType = {newType}
                                 setNewType = {setNewType}
                                 editing={editingWidget.id === widget.id}
