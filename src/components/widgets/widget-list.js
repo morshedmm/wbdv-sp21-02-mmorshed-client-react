@@ -32,7 +32,7 @@ const WidgetList = (
     const [newOrder, setNewOrder] = useState(false)
     const [newWidth, setNewWidth] = useState()
     const [newHeight, setNewHeight] = useState()
-    const [newUrl, setNewUrl] = useState()
+    const [newUrl, setNewUrl] = useState("Image URL")
 
     useEffect(() => {
     findWidgetsForTopic(topicId);
