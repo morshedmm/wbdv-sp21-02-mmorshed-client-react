@@ -13,6 +13,7 @@ const ParagraphWidget = ({widget, editing, newText, setNewText, newType, setNewT
                                                 <option value={"HEADING"}>Heading</option>
                                                 <option value={"PARAGRAPH"}>Paragraph</option>
                                                 <option value={"LIST"}>LIST</option>
+                                                <option value={"IMAGE"}>IMAGE</option>
 
                     </select>
 
