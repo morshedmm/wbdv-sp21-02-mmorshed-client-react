@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ListWidget = ({widget, setWidget, editing, newText, setNewText, newOrder, setNewOrder}) => {
+const ListWidget = ({widget, setWidget, editing, newText, setNewText, newOrder, setNewOrder, newType, setNewType}) => {
     return (
         <div>
             {/*<h2>List Widget</h2>*/}
@@ -36,10 +36,20 @@ const ListWidget = ({widget, setWidget, editing, newText, setNewText, newOrder, 
             {
                 editing &&
                 <div>
+
+                    <select value={newType} onChange={(event) => {setNewType(event.target.value);}}
+                                                                                            className="form-control">
+                                      <option value={"HEADING"}>Heading</option>
+                                      <option value={"PARAGRAPH"}>Paragraph</option>
+                                      <option value={"LIST"}>LIST</option>
+                                      <option value={"IMAGE"}>IMAGE</option>
+
+                    </select>
+
                     <input type="checkbox" checked={newOrder} onChange={(event) => {setNewOrder(event.target.checked);}} /> Ordered
                     <br/>
                     List Items
-                    <textarea rows={10} value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control">
+                    <textarea placeholder="Enter one list item per line" rows={10} value={newText} onChange={(event) => setNewText(event.target.value)} className="form-control">
 
                     </textarea>
                 </div>

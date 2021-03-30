@@ -98,6 +98,8 @@ const WidgetList = (
                             <ListWidget
                                 newText = {newText}
                                 setNewText = {setNewText}
+                                newType = {newType}
+                                setNewType = {setNewType}
                                 newOrder = {newOrder}
                                 setNewOrder = {setNewOrder}
                                 setWidget={setWidget}
@@ -114,6 +116,8 @@ const WidgetList = (
                                 setNewUrl = {setNewUrl}
                                 setNewWidth = {setNewWidth}
                                 setNewHeight = {setNewHeight}
+                                newType = {newType}
+                                setNewType = {setNewType}
                                 editing={editingWidget.id === widget.id}
                                 widget={widget}/>
                         }

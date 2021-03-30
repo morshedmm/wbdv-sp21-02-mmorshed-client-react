@@ -10,7 +10,7 @@ const WIDGETS_URL = process.env.REACT_APP_WIDGET_URL;
 export const createWidgetForTopic = (topicId, type, size, text) =>
     fetch(`${TOPICS_URL}/${topicId}/widgets`, {
         method: "POST",
-        body: JSON.stringify({type: "HEADING", size: 1, text: "New Widget", url: "Image URL"}),
+        body: JSON.stringify({type: "HEADING", size: 1, text: "New Widget"}),
         headers: {
             'content-type': 'application/json'
         }
