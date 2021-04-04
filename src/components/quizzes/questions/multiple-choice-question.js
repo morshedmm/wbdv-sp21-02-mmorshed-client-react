@@ -5,10 +5,11 @@ const MultipleChoiceQuestion = ({question}) => {
         <div>
             <h4>{question.question}</h4>
             {/*question.correct*/}
+            <div className="list-group">
             {
                 question.choices.map((choice) => {
                     return(
-                    <div>
+                    <div className="list-group-item">
                         <label>
                             <input type="radio" name={question._id}/>
                             <span className="add-padding-left">
@@ -19,6 +20,7 @@ const MultipleChoiceQuestion = ({question}) => {
                     )
                 })
             }
+            </div>
         </div>
     )
 }
