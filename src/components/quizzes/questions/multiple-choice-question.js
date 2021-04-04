@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 
 const MultipleChoiceQuestion = ({question}) => {
+
+    const [selectedAnswer, setSelectedAnswer] = useState();
+
     return(
         <div>
             <h4>{question.question}</h4>
@@ -11,7 +14,7 @@ const MultipleChoiceQuestion = ({question}) => {
                     return(
                     <div className="list-group-item">
                         <label>
-                            <input type="radio" name={question._id}/>
+                            <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);}}/>
                             <span className="add-padding-left">
                                 {choice}
                             </span>
@@ -20,6 +23,9 @@ const MultipleChoiceQuestion = ({question}) => {
                     )
                 })
             }
+            <div>
+                {selectedAnswer}
+            </div>
             </div>
         </div>
     )
