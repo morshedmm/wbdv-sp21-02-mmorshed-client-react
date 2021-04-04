@@ -1,5 +1,11 @@
 .add-padding-left {
-    padding-bot: 20px;
+    position: absolute;
+    padding-left: 20px;
+}
+
+.add-padding-left-tick {
+    position: absolute;
+    margin-left: 1120px;
 }
 
 .background-correct {

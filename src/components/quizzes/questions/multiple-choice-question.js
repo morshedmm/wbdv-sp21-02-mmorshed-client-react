@@ -22,6 +22,9 @@ const MultipleChoiceQuestion = ({question}) => {
                             <span className="add-padding-left">
                                 {choice}
                             </span>
+                            <span className="add-padding-left-tick">
+                            <i className="fas fa-check"></i>
+                            </span>
                         </label>
                     </div>
 
