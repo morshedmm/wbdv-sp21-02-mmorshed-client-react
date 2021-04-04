@@ -19,11 +19,20 @@ const QuizzesList = () => {
                 {
                     quizzes.map((quiz) => {
                         return(
+                        <div className="container">
+                          <div className="row form-control">
                             <Link
                                 to={`/courses/${courseId}/quizzes/${quiz._id}`}
-                                className="list-group-item">
+                                className="list-group-ite">
                                 {quiz.title}
                             </Link>
+                            <Link
+                                to={`/courses/${courseId}/quizzes/${quiz._id}`}
+                                className="float-right btn btn-primary">
+                                Start
+                                </Link>
+                          </div>
+                        </div>
                         )
                     })
                 }
