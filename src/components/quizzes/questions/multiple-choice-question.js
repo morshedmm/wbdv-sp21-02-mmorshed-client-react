@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './questions.css'
 
 const MultipleChoiceQuestion = ({question}) => {
 
@@ -13,7 +14,9 @@ const MultipleChoiceQuestion = ({question}) => {
             {
                 question.choices.map((choice) => {
                     return(
-                    <div className="list-group-item">
+                    <>
+                    { graded && question.correct===choice &&
+                    <div className="list-group-item background-correct">
                         <label>
                             <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);}}/>
                             <span className="add-padding-left">
@@ -21,6 +24,32 @@ const MultipleChoiceQuestion = ({question}) => {
                             </span>
                         </label>
                     </div>
+
+                    }
+
+                    { graded && question.correct!==choice &&
+                                        <div className="list-group-item">
+                                            <label>
+                                                <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);}}/>
+                                                <span className="add-padding-left">
+                                                    {choice}
+                                                </span>
+                                            </label>
+                                        </div>
+
+                    }
+
+                    { !graded &&
+                    <div className="list-group-item">
+                                            <label>
+                                                <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);}}/>
+                                                <span className="add-padding-left">
+                                                    {choice}
+                                                </span>
+                                            </label>
+                    </div>
+                    }
+                    </>
                     )
                 })
             }
