@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from "react-router-dom";
+import QuizzesList from '../quizzes/quizzes-list'
 
 const CourseRow = (
     {
@@ -49,6 +50,12 @@ const CourseRow = (
         </td>
         <td className="d-none d-sm-table-cell">{owner}</td>
         <td className="d-none d-sm-none d-md-none d-lg-table-cell">{lastModified}</td>
+        <td>
+            <Link to={`/courses/${course._id}/quizzes`}>
+                Quizzes
+                {/*<QuizzesList/>*/}
+            </Link>
+        </td>
         <td>
             <span class="float-right">
             {editing && <i onClick={() => saveTitle()} className="fas fa-check"></i>}
