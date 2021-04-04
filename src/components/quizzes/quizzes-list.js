@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom";
+import './quizzes-list.css'
 
 const QuizzesList = () => {
     const {courseId} = useParams();
@@ -13,22 +14,22 @@ const QuizzesList = () => {
             })
     }, [])
     return(
-        <div>
+        <div className="container">
             <h2>Quizzes</h2>
             <div className="list-group">
                 {
                     quizzes.map((quiz) => {
                         return(
-                        <div className="container">
-                          <div className="row form-control">
+                        <div className="">
+                          <div className="row list-group-item">
                             <Link
                                 to={`/courses/${courseId}/quizzes/${quiz._id}`}
-                                className="list-group-ite">
+                                className="">
                                 {quiz.title}
                             </Link>
                             <Link
                                 to={`/courses/${courseId}/quizzes/${quiz._id}`}
-                                className="float-right btn btn-primary">
+                                className="float-right btn btn-primary btn-sm">
                                 Start
                                 </Link>
                           </div>
