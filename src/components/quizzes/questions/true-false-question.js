@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 const TrueFalseQuestion = ({question}) => {
-    const [answer, setAnswer] = useState(null);
+    const [answer, setAnswer] = useState();
     const [graded, setGraded] = useState(false);
     return (
         <div>
@@ -42,7 +42,7 @@ const TrueFalseQuestion = ({question}) => {
               <div className="list-group-item">
                 <label><input
                     type="radio"
-                    onClick={() => setAnswer(true)}
+                    onClick={(event) => setAnswer(true)}
                     name={question._id}/>True</label>
               </div>
               }
@@ -51,16 +51,16 @@ const TrueFalseQuestion = ({question}) => {
               <div className="list-group-item">
                 <label><input
                     type="radio"
-                    onClick={() => setAnswer(false)}
+                    onClick={(event) => setAnswer(false)}
                     name={question._id}/>False</label>
               </div>
               }
 
-              {graded && question.correct=='true' &&
+              {graded && question.correct=='true' && answer==true &&
                 <div className="list-group-item background-correct">
                               <label><input
                                   type="radio"
-                                  onClick={() => setAnswer(true)}
+                                  checked={true}
                                   name={question._id}/>True</label>
                               <span className="add-padding-left-tick-2">
                                   <i className="fas fa-check"></i>
@@ -68,11 +68,23 @@ const TrueFalseQuestion = ({question}) => {
                 </div>
               }
 
+              {graded && question.correct=='true' && answer!=true &&
+                              <div className="list-group-item background-correct">
+                                            <label><input
+                                                type="radio"
+
+                                                name={question._id}/>True</label>
+                                            <span className="add-padding-left-tick-2">
+                                                <i className="fas fa-check"></i>
+                                            </span>
+                              </div>
+                            }
+
               {graded && question.correct!='true' && answer==true &&
                                                           <div className="list-group-item background-wrong">
                                                                         <label><input
                                                                             type="radio"
-                                                                            onClick={() => setAnswer(true)}
+                                                                            checked={true}
                                                                             name={question._id}/>True</label>
                                                                         <span className="add-padding-left-tick-2">
                                                                             <i className="fas fa-times"></i>
@@ -84,7 +96,7 @@ const TrueFalseQuestion = ({question}) => {
                                                                         <div className="list-group-item">
                                                                                       <label><input
                                                                                        type="radio"
-                                                                                     onClick={() => setAnswer(true)}
+
                                                                                      name={question._id}/>True</label>
                                                           </div>
                             }
@@ -93,7 +105,7 @@ const TrueFalseQuestion = ({question}) => {
                               <div className="list-group-item background-wrong">
                                                                         <label><input
                                                                             type="radio"
-                                                                            onClick={() => setAnswer(false)}
+                                                                            checked={true}
                                                                             name={question._id}/>False</label>
                                                                             <span className="add-padding-left-tick-2">
                                                                                   <i className="fas fa-times"></i>
@@ -105,7 +117,7 @@ const TrueFalseQuestion = ({question}) => {
                                                           <div className="list-group-item">
                                                                                       <label><input
                                                                                           type="radio"
-                                                                                          onClick={() => setAnswer(false)}
+
                                                                                           name={question._id}/>False</label>
                                             </div>
               }
@@ -116,7 +128,7 @@ const TrueFalseQuestion = ({question}) => {
                 <div className="list-group-item background-correct">
                                             <label><input
                                                 type="radio"
-                                                onClick={() => setAnswer(false)}
+                                                checked={true}
                                                 name={question._id}/>False</label>
                                             <span className="add-padding-left-tick-2">
                                                 <i className="fas fa-check"></i>
@@ -128,7 +140,7 @@ const TrueFalseQuestion = ({question}) => {
                               <div className="list-group-item background-correct">
                                                           <label><input
                                                               type="radio"
-                                                              onClick={() => setAnswer(false)}
+
                                                               name={question._id}/>False</label>
                                                           <span className="add-padding-left-tick-2">
                                                               <i className="fas fa-check"></i>
@@ -145,7 +157,7 @@ const TrueFalseQuestion = ({question}) => {
             </div>
 
                   <div>
-                     Your Answer: {answer}
+                     Your Answer: {JSON.stringify(answer)}
                   </div>
                   <div>
                             <i type="button" className="btn btn-success" onClick={() => setGraded(true)}>
