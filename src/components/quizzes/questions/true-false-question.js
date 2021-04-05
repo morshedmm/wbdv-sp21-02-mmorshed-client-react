@@ -5,7 +5,7 @@ const TrueFalseQuestion = ({question}) => {
     const [graded, setGraded] = useState(false);
     return (
         <div>
-            <div className="row">
+            <div className="container row">
             <h4>
                 {question.question}
                 {/*
@@ -43,7 +43,7 @@ const TrueFalseQuestion = ({question}) => {
                 <label><input
                     type="radio"
                     onClick={(event) => setAnswer(true)}
-                    name={question._id}/>True</label>
+                    name={question._id}/><span className="add-padding-left">True</span></label>
               </div>
               }
 
@@ -52,7 +52,7 @@ const TrueFalseQuestion = ({question}) => {
                 <label><input
                     type="radio"
                     onClick={(event) => setAnswer(false)}
-                    name={question._id}/>False</label>
+                    name={question._id}/><span className="add-padding-left">False</span></label>
               </div>
               }
 
@@ -61,7 +61,7 @@ const TrueFalseQuestion = ({question}) => {
                               <label><input
                                   type="radio"
                                   checked={true}
-                                  name={question._id}/>True</label>
+                                  name={question._id}/><span className="add-padding-left">True</span></label>
                               <span className="add-padding-left-tick-2">
                                   <i className="fas fa-check"></i>
                               </span>
@@ -73,7 +73,7 @@ const TrueFalseQuestion = ({question}) => {
                                             <label><input
                                                 type="radio"
                                                 checked={false}
-                                                name={question._id}/>True</label>
+                                                name={question._id}/><span className="add-padding-left">True</span></label>
                                             <span className="add-padding-left-tick-2">
                                                 <i className="fas fa-check"></i>
                                             </span>
@@ -85,7 +85,7 @@ const TrueFalseQuestion = ({question}) => {
                                                                         <label><input
                                                                             type="radio"
                                                                             checked={true}
-                                                                            name={question._id}/>True</label>
+                                                                            name={question._id}/><span className="add-padding-left">True</span></label>
                                                                         <span className="add-padding-left-tick-2">
                                                                             <i className="fas fa-times"></i>
                                                                         </span>
@@ -97,7 +97,7 @@ const TrueFalseQuestion = ({question}) => {
                                                                                       <label><input
                                                                                        type="radio"
                                                                                         checked={false}
-                                                                                     name={question._id}/>True</label>
+                                                                                     name={question._id}/><span className="add-padding-left">True</span></label>
                                                           </div>
                             }
 
@@ -106,7 +106,7 @@ const TrueFalseQuestion = ({question}) => {
                                                                         <label><input
                                                                             type="radio"
                                                                             checked={true}
-                                                                            name={question._id}/>False</label>
+                                                                            name={question._id}/><span className="add-padding-left">False</span></label>
                                                                             <span className="add-padding-left-tick-2">
                                                                                   <i className="fas fa-times"></i>
                                                                             </span>
@@ -118,7 +118,7 @@ const TrueFalseQuestion = ({question}) => {
                                                                                       <label><input
                                                                                           type="radio"
                                                                                           checked={false}
-                                                                                          name={question._id}/>False</label>
+                                                                                          name={question._id}/><span className="add-padding-left">False</span></label>
                                             </div>
               }
 
@@ -129,7 +129,7 @@ const TrueFalseQuestion = ({question}) => {
                                             <label><input
                                                 type="radio"
                                                 checked={true}
-                                                name={question._id}/>False</label>
+                                                name={question._id}/><span className="add-padding-left">False</span></label>
                                             <span className="add-padding-left-tick-2">
                                                 <i className="fas fa-check"></i>
                                             </span>
@@ -141,7 +141,7 @@ const TrueFalseQuestion = ({question}) => {
                                                           <label><input
                                                               type="radio"
                                                               checked={false}
-                                                              name={question._id}/>False</label>
+                                                              name={question._id}/><span className="add-padding-left">False</span></label>
                                                           <span className="add-padding-left-tick-2">
                                                               <i className="fas fa-check"></i>
                                                           </span>

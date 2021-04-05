@@ -18,9 +18,13 @@ const Quiz = () => {
             <ul>
                 {
                     questions.map(question =>
+                    <>
                     <li>
                         <Question question={question}/>
                     </li>
+                    <br/>
+                    </>
+
                     )
                 }
             </ul>
