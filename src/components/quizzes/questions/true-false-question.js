@@ -46,6 +46,9 @@ const TrueFalseQuestion = ({question}) => {
                                   type="radio"
                                   onClick={() => setAnswer(true)}
                                   name={question._id}/>True</label>
+                              <span className="add-padding-left-tick-2">
+                                  <i className="fas fa-check"></i>
+                              </span>
                 </div>
               }
 
@@ -55,24 +58,30 @@ const TrueFalseQuestion = ({question}) => {
                                                                             type="radio"
                                                                             onClick={() => setAnswer(true)}
                                                                             name={question._id}/>True</label>
+                                                                        <span className="add-padding-left-tick-2">
+                                                                            <i className="fas fa-times"></i>
+                                                                        </span>
                                             </div>
               }
 
               {graded && question.correct!='true' && answer!=true &&
                                                                         <div className="list-group-item">
                                                                                       <label><input
-                                                                                          type="radio"
-                                                                                          onClick={() => setAnswer(true)}
-                                                                                          name={question._id}/>True</label>
+                                                                                       type="radio"
+                                                                                     onClick={() => setAnswer(true)}
+                                                                                     name={question._id}/>True</label>
                                                           </div>
                             }
 
               {graded && question.correct!='false' && answer==false &&
-                                            <div className="list-group-item background-wrong">
+                              <div className="list-group-item background-wrong">
                                                                         <label><input
                                                                             type="radio"
                                                                             onClick={() => setAnswer(false)}
                                                                             name={question._id}/>False</label>
+                                                                            <span className="add-padding-left-tick-2">
+                                                                                  <i className="fas fa-times"></i>
+                                                                            </span>
                               </div>
               }
 
@@ -93,6 +102,9 @@ const TrueFalseQuestion = ({question}) => {
                                                 type="radio"
                                                 onClick={() => setAnswer(false)}
                                                 name={question._id}/>False</label>
+                                            <span className="add-padding-left-tick-2">
+                                                <i className="fas fa-check"></i>
+                                            </span>
                 </div>
               }
 
@@ -102,6 +114,9 @@ const TrueFalseQuestion = ({question}) => {
                                                               type="radio"
                                                               onClick={() => setAnswer(false)}
                                                               name={question._id}/>False</label>
+                                                          <span className="add-padding-left-tick-2">
+                                                              <i className="fas fa-check"></i>
+                                                          </span>
                               </div>
                             }
 
