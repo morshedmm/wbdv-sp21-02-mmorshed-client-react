@@ -7,9 +7,7 @@ const Quiz = () => {
     const {courseId, quizId} = useParams();
     const [questions, setQuestions] = useState([]);
     useEffect(() => {
-        // TODO: move this to a service file
-        {/*fetch(`http://localhost:3000/api/quizzes/${quizId}/questions`)
-            .then(response => response.json())*/}
+
         questionService.findQuestionsForQuiz(quizId)
             .then(questions => setQuestions(questions))
         },[])
