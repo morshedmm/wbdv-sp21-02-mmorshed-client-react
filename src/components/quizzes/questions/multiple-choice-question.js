@@ -36,7 +36,12 @@ const MultipleChoiceQuestion = ({question}) => {
                     { graded && question.correct===choice &&
                     <div className="list-group-item background-correct">
                         <label>
-                            <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);}}/>
+                            {selectedAnswer===choice &&
+                                <input type="radio" name={question._id} checked={true}/>
+                            }
+                            {selectedAnswer!==choice &&
+                                <input type="radio" name={question._id} checked={false}/>
+                            }
                             <span className="add-padding-left">
                                 {choice}
                             </span>
@@ -51,7 +56,7 @@ const MultipleChoiceQuestion = ({question}) => {
                     { graded && question.correct!==choice && selectedAnswer===choice &&
                                         <div className="list-group-item background-wrong">
                                             <label>
-                                                <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);}}/>
+                                                <input type="radio" name={question._id} checked={true}/>
                                                 <span className="add-padding-left">
                                                     {choice}
                                                 </span>
@@ -66,7 +71,7 @@ const MultipleChoiceQuestion = ({question}) => {
                     { graded && question.correct!==choice && selectedAnswer!==choice &&
                                                             <div className="list-group-item">
                                                                 <label>
-                                                                    <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);}}/>
+                                                                    <input type="radio" name={question._id} checked={false}/>
                                                                     <span className="add-padding-left">
                                                                         {choice}
                                                                     </span>
