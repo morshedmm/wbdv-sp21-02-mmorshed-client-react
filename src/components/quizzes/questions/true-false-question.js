@@ -72,7 +72,7 @@ const TrueFalseQuestion = ({question}) => {
                               <div className="list-group-item background-correct">
                                             <label><input
                                                 type="radio"
-
+                                                checked={false}
                                                 name={question._id}/>True</label>
                                             <span className="add-padding-left-tick-2">
                                                 <i className="fas fa-check"></i>
@@ -96,7 +96,7 @@ const TrueFalseQuestion = ({question}) => {
                                                                         <div className="list-group-item">
                                                                                       <label><input
                                                                                        type="radio"
-
+                                                                                        checked={false}
                                                                                      name={question._id}/>True</label>
                                                           </div>
                             }
@@ -117,7 +117,7 @@ const TrueFalseQuestion = ({question}) => {
                                                           <div className="list-group-item">
                                                                                       <label><input
                                                                                           type="radio"
-
+                                                                                          checked={false}
                                                                                           name={question._id}/>False</label>
                                             </div>
               }
@@ -140,7 +140,7 @@ const TrueFalseQuestion = ({question}) => {
                               <div className="list-group-item background-correct">
                                                           <label><input
                                                               type="radio"
-
+                                                              checked={false}
                                                               name={question._id}/>False</label>
                                                           <span className="add-padding-left-tick-2">
                                                               <i className="fas fa-check"></i>
