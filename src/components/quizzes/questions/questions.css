@@ -8,6 +8,15 @@
     margin-left: 1120px;
 }
 
+.add-padding-left-top {
+    position: absolute;
+    margin-left: 1150px;
+}
+
 .background-correct {
     background-color: green;
+}
+
+.background-wrong {
+    background-color: red;
 }

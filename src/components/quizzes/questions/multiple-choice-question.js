@@ -5,11 +5,29 @@ const MultipleChoiceQuestion = ({question}) => {
 
     const [selectedAnswer, setSelectedAnswer] = useState();
     const [graded, setGraded] = useState(false);
+    const [correct, setCorrect] = useState(false);
 
     return(
         <div>
+            <div className="container row">
+
             <h4>{question.question}</h4>
+                { graded && selectedAnswer!==question.correct &&
+                <span className="add-padding-left-top">
+                            <i className="fas fa-times"></i>
+
+                </span>
+                }
+
+                { graded && selectedAnswer===question.correct &&
+                  <span className="add-padding-left-top">
+                     <i className="fas fa-check"></i>
+
+                  </span>
+                }
+            </div>
             {/*question.correct*/}
+
             <div className="list-group">
             {
                 question.choices.map((choice) => {
@@ -30,15 +48,30 @@ const MultipleChoiceQuestion = ({question}) => {
 
                     }
 
-                    { graded && question.correct!==choice &&
-                                        <div className="list-group-item">
+                    { graded && question.correct!==choice && selectedAnswer===choice &&
+                                        <div className="list-group-item background-wrong">
                                             <label>
                                                 <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);}}/>
                                                 <span className="add-padding-left">
                                                     {choice}
                                                 </span>
+                                                <span className="add-padding-left-tick">
+                                                                            <i className="fas fa-times"></i>
+                                                </span>
                                             </label>
                                         </div>
+
+                    }
+
+                    { graded && question.correct!==choice && selectedAnswer!==choice &&
+                                                            <div className="list-group-item">
+                                                                <label>
+                                                                    <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);}}/>
+                                                                    <span className="add-padding-left">
+                                                                        {choice}
+                                                                    </span>
+                                                                </label>
+                                                            </div>
 
                     }
 
@@ -60,7 +93,7 @@ const MultipleChoiceQuestion = ({question}) => {
                 Your Answer: {selectedAnswer}
             </div>
             <div>
-                <i type="button" className="btn btn-primary" onClick={() => setGraded(true)}>
+                <i type="button" className="btn btn-success" onClick={() => setGraded(true)}>
                     Grade
                 </i>
             </div>
