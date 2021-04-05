@@ -18,6 +18,11 @@
     margin-left: 1150px;
 }
 
+.add-padding-left-top-2 {
+    position: absolute;
+    margin-left: 1130px;
+}
+
 .background-correct {
     background-color: green;
 }

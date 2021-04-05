@@ -5,6 +5,7 @@ const TrueFalseQuestion = ({question}) => {
     const [graded, setGraded] = useState(false);
     return (
         <div>
+            <div className="row">
             <h4>
                 {question.question}
                 {/*
@@ -16,10 +17,25 @@ const TrueFalseQuestion = ({question}) => {
                     <i className="fas fa-times"></i>
                 */}
             </h4>
+
+            { graded && question.correct != JSON.stringify(answer) &&
+                            <span className="add-padding-left-top-2">
+                                        <i className="fas fa-times"></i>
+
+                            </span>
+            }
+
+            { graded && question.correct == JSON.stringify(answer) &&
+                                        <span className="add-padding-left-top-2">
+                                                    <i className="fas fa-check"></i>
+
+                                        </span>
+            }
+            </div>
             {/*question.correct*/}
             {/*<br/>*/}
             {/*JSON.stringify(answer)*/}
-            <br/>
+
             <div className="list-group">
 
               {!graded &&
