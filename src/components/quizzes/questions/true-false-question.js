@@ -49,8 +49,26 @@ const TrueFalseQuestion = ({question}) => {
                 </div>
               }
 
-              {graded && question.correct!='false' &&
-                                            <div className="list-group-item">
+              {graded && question.correct!='true' && answer==true &&
+                                                          <div className="list-group-item background-wrong">
+                                                                        <label><input
+                                                                            type="radio"
+                                                                            onClick={() => setAnswer(true)}
+                                                                            name={question._id}/>True</label>
+                                            </div>
+              }
+
+              {graded && question.correct!='true' && answer!=true &&
+                                                                        <div className="list-group-item">
+                                                                                      <label><input
+                                                                                          type="radio"
+                                                                                          onClick={() => setAnswer(true)}
+                                                                                          name={question._id}/>True</label>
+                                                          </div>
+                            }
+
+              {graded && question.correct!='false' && answer==false &&
+                                            <div className="list-group-item background-wrong">
                                                                         <label><input
                                                                             type="radio"
                                                                             onClick={() => setAnswer(false)}
@@ -58,16 +76,18 @@ const TrueFalseQuestion = ({question}) => {
                               </div>
               }
 
-              {graded && question.correct!='true' &&
-                                            <div className="list-group-item">
-                                                          <label><input
-                                                              type="radio"
-                                                              onClick={() => setAnswer(true)}
-                                                              name={question._id}/>True</label>
-                              </div>
-                            }
+              {graded && question.correct!='false' && answer!=false &&
+                                                          <div className="list-group-item">
+                                                                                      <label><input
+                                                                                          type="radio"
+                                                                                          onClick={() => setAnswer(false)}
+                                                                                          name={question._id}/>False</label>
+                                            </div>
+              }
 
-              {graded && question.correct=='false' &&
+
+
+              {graded && question.correct=='false' && answer==false &&
                 <div className="list-group-item background-correct">
                                             <label><input
                                                 type="radio"
@@ -75,6 +95,15 @@ const TrueFalseQuestion = ({question}) => {
                                                 name={question._id}/>False</label>
                 </div>
               }
+
+              {graded && question.correct=='false' && answer!=false &&
+                              <div className="list-group-item background-correct">
+                                                          <label><input
+                                                              type="radio"
+                                                              onClick={() => setAnswer(false)}
+                                                              name={question._id}/>False</label>
+                              </div>
+                            }
 
 
 
