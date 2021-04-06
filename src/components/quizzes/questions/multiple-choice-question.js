@@ -14,14 +14,14 @@ const MultipleChoiceQuestion = ({question}) => {
             <h4>{question.question}</h4>
                 { graded && selectedAnswer!==question.correct &&
                 <span className="add-padding-left-top">
-                            <i className="fas fa-times"></i>
+                            <i className="fas fa-times color-red"></i>
 
                 </span>
                 }
 
                 { graded && selectedAnswer===question.correct &&
                   <span className="add-padding-left-top">
-                     <i className="fas fa-check"></i>
+                     <i className="fas fa-check color-green"></i>
 
                   </span>
                 }

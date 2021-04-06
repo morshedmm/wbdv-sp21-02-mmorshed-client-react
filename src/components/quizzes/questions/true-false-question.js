@@ -20,14 +20,14 @@ const TrueFalseQuestion = ({question}) => {
 
             { graded && question.correct != JSON.stringify(answer) &&
                             <span className="add-padding-left-top-2">
-                                        <i className="fas fa-times"></i>
+                                        <i className="fas fa-times color-red"></i>
 
                             </span>
             }
 
             { graded && question.correct == JSON.stringify(answer) &&
                                         <span className="add-padding-left-top-2">
-                                                    <i className="fas fa-check"></i>
+                                                    <i className="fas fa-check color-green"></i>
 
                                         </span>
             }
