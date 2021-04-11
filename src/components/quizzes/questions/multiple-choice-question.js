@@ -1,11 +1,22 @@
 import React, {useState} from "react";
 import './questions.css'
 
-const MultipleChoiceQuestion = ({question}) => {
+const MultipleChoiceQuestion = ({question, graded, questions, setQuestions}) => {
 
     const [selectedAnswer, setSelectedAnswer] = useState();
-    const [graded, setGraded] = useState(false);
+    //const [graded, setGraded] = useState(false);
     const [correct, setCorrect] = useState(false);
+
+    const changeAnswer = (myAnswer) => {
+            //console.log("CALLED")
+            setQuestions(
+                questions.map(item =>
+                    item._id === question._id
+                    ? {...item, answer : myAnswer}
+                    : item
+            ))
+
+        }
 
     return(
         <div>
@@ -83,7 +94,8 @@ const MultipleChoiceQuestion = ({question}) => {
                     { !graded &&
                     <div className="list-group-item">
                                             <label>
-                                                <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);}}/>
+                                                <input type="radio" name={question._id} onChange={(event) => {setSelectedAnswer(choice);
+                                                changeAnswer(choice)}}/>
                                                 <span className="add-padding-left">
                                                     {choice}
                                                 </span>
@@ -98,9 +110,9 @@ const MultipleChoiceQuestion = ({question}) => {
                 Your Answer: {selectedAnswer}
             </div>
             <div>
-                <i type="button" className="btn btn-success" onClick={() => setGraded(true)}>
+                {/*<i type="button" className="btn btn-success" onClick={() => setGraded(true)}>
                     Grade
-                </i>
+                </i>*/}
             </div>
             </div>
         </div>

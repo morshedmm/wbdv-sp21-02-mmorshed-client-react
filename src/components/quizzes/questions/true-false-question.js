@@ -1,8 +1,21 @@
 import React, {useState} from "react";
+import quizService from '../../../services/quiz-service'
 
-const TrueFalseQuestion = ({question}) => {
+const TrueFalseQuestion = ({question, quizId, graded, questions, setQuestions}) => {
     const [answer, setAnswer] = useState();
-    const [graded, setGraded] = useState(false);
+    //const [graded, setGraded] = useState(false);
+
+    const changeAnswer = (myAnswer) => {
+        //console.log("CALLED")
+        setQuestions(
+            questions.map(item =>
+                item._id === question._id
+                ? {...item, answer : myAnswer}
+                : item
+        ))
+
+    }
+
     return (
         <div>
             <div className="container row">
@@ -42,7 +55,7 @@ const TrueFalseQuestion = ({question}) => {
               <div className="list-group-item">
                 <label><input
                     type="radio"
-                    onClick={(event) => setAnswer(true)}
+                    onClick={(event) => {setAnswer(true);changeAnswer("true");}}
                     name={question._id}/><span className="add-padding-left">True</span></label>
               </div>
               }
@@ -51,7 +64,7 @@ const TrueFalseQuestion = ({question}) => {
               <div className="list-group-item">
                 <label><input
                     type="radio"
-                    onClick={(event) => setAnswer(false)}
+                    onClick={(event) => {setAnswer(false);changeAnswer("false");}}
                     name={question._id}/><span className="add-padding-left">False</span></label>
               </div>
               }
@@ -160,9 +173,9 @@ const TrueFalseQuestion = ({question}) => {
                      Your Answer: {JSON.stringify(answer)}
                   </div>
                   <div>
-                            <i type="button" className="btn btn-success" onClick={() => setGraded(true)}>
+                            {/*<i type="button" className="btn btn-success" onClick={() => {setGraded(true);quizService.submitQuiz(quizId,question)}}>
                                 Grade
-                            </i>
+                            </i>*/}
                   </div>
 
         </div>
